@@ -7,10 +7,7 @@ const orderSchema = new Schema(
         type: Date,
         default: Date.now
     },
-    items: [orderItemSchema],
-    totalCost: {
-        type: Number
-    }
+    items: [orderItemSchema]
   },
   {
     toJSON: {
@@ -18,6 +15,10 @@ const orderSchema = new Schema(
     }
   }
 );
+
+orderSchema.virtual('totalCost').get(function() {
+  return this.items.itemTotal
+})
 
 const Order = model('Order', orderSchema);
 

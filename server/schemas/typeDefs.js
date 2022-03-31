@@ -25,6 +25,12 @@ const typeDefs = gql`
         reviewText: String
     }
 
+    type Order {
+        _id: ID
+        items: [String]
+        totalCost: Float
+    }
+
     type Query {
         users: [User]
         userId(_id: String!): User
