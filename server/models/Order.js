@@ -1,25 +1,20 @@
-const { Schema, model } = require('mongoose');
-const orderItemSchema = require('./OrderItem');
+const mongoose = require('mongoose');
 
-const orderSchema = new Schema(
-  {
-    orderDate: {
-        type: Date,
-        default: Date.now
-    },
-    items: [orderItemSchema]
+const { Schema } = mongoose;
+
+const orderSchema = new Schema({
+  purchaseDate: {
+    type: Date,
+    default: Date.now
   },
-  {
-    toJSON: {
-      virtuals: true
+  products: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Product'
     }
-  }
-);
+  ]
+});
 
-orderSchema.virtual('totalCost').get(function() {
-  return this.items.itemTotal
-})
-
-const Order = model('Order', orderSchema);
+const Order = mongoose.model('Order', orderSchema);
 
 module.exports = Order;

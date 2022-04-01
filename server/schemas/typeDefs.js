@@ -6,17 +6,24 @@ const typeDefs = gql`
         username: String!
         email: String!
         reviews: [Review]
+        orders: [Order]
     }
     
     type Product {
         _id: ID
         productName: String!
-        manufacturer: String!
         price: Float!
         description: String!
         ingredients: [String]
         reviews: [Review]
-        Image: String
+        image: String
+        quantity: Int
+    }
+
+    type Order {
+      _id: ID
+      purchaseDate: String
+      products: [Product]
     }
 
     type Review {
@@ -25,26 +32,21 @@ const typeDefs = gql`
         reviewText: String
     }
 
-    type Order {
-        _id: ID
-        items: [String]
-        totalCost: Float
-    }
-
     type Query {
         users: [User]
-        userId(_id: String!): User
-        userName(username: String!): User
+        user(_id: String!): User
         products: [Product]
-        productId(_id: String!): Product
-        productName(productName: String!): Product
+        product(_id: String!): Product
+        order(userId: ID!, orderId: ID!): Order
     }
 
     type Mutation {
         login(email: String!, password: String!): User
         addUser(username: String!, email: String!, password: String!): User
-        addProduct(productName: String!, manufacturer: String!, price: Float!, description: String!, ingredients: [String], image: String): Product
+        addProduct(productName: String!, price: Float!, description: String!, ingredients: [String], image: String, quantity: Int): Product
         addReview(rating: Int!, reviewText: String, userId: ID, productID: ID): Review
+        addOrder(_id: ID!, products: [ID]!): Order
+        updateProduct(_id: ID!, quantity: Int!): Product
     }
 
 `;

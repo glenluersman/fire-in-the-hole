@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const Order = require('./Order');
 
 const userSchema = new Schema(
   {
@@ -25,7 +26,8 @@ const userSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'Review'
       }
-    ]
+    ],
+    orders: [Order.schema]
   },
   {
     toJSON: {
@@ -51,6 +53,10 @@ userSchema.methods.isCorrectPassword = async function(password) {
 
 userSchema.virtual('reviewCount').get(function() {
   return this.reviews.length;
+});
+
+userSchema.virtual('orderCount').get(function() {
+  return this.orders.length;
 });
 
 const User = model('User', userSchema);

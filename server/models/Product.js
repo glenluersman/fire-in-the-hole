@@ -6,10 +6,6 @@ const productSchema = new Schema(
       type: String,
       required: true
     },
-    manufacturer: {
-        type: String,
-        required: true
-    },
     price: {
         type: Number,
         required: true
@@ -27,6 +23,11 @@ const productSchema = new Schema(
     ],
     image: {
       type: String
+    },
+    quantity: {
+      type: Number,
+      min: 0,
+      default: 0
     }
   },
   {

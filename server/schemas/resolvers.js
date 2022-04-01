@@ -1,4 +1,4 @@
-const { User, Product, Review } = require('../models');
+const { User, Product, Review, Order } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
@@ -9,16 +9,13 @@ const resolvers = {
                 .populate('reviews');
         },
 
-        userId: async (parent, { _id }) => {
-            return User.findOne({ _id })
-                .select('-__v -password')
+        user: async (parent, { _id }) => {
+            const user = await User.findById(_id)
                 .populate('reviews');
-        },
 
-        userName: async (parent, { username }) => {
-            return User.findOne({ username })
-                .select('-__v -password')
-                .populate('reviews');
+            user.orders.sort((a,b) => b.purchaseDate - a.purchaseDate);
+
+            return user;
         },
 
         products: async () => {
@@ -26,24 +23,19 @@ const resolvers = {
             .populate('reviews');
         },
 
-        productId: async (parent, { _id }) => {
-            return Product.findOne({ _id })
+        product: async (parent, { _id }) => {
+            return Product.findById({ _id })
             .populate('reviews');
         },
 
-        productName: async (parent, { productName }) => {
-            return Product.findOne({ productName })
-            .populate('reviews');
+        order: async (parent, { userId, orderId }) => {
+            const user = await User.findById(userId);
+    
+            return user.orders.id(orderId);
         }
     },
 
     Mutation: {
-        addUser: async (parent, args) => {
-            const user = await User.create(args);
-            // const token = signToken(user);
-            return user;
-        },
-
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
 
@@ -57,6 +49,12 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect credentials');
             }
             
+            return user;
+        },
+
+        
+        addUser: async (parent, args) => {
+            const user = await User.create(args);
             return user;
         },
 
@@ -81,6 +79,20 @@ const resolvers = {
             );
 
             return review;
+        },
+
+        addOrder: async (parent, { _id, products }) => {
+            const order = new Order({ products });
+    
+            await User.findByIdAndUpdate(_id, { $push: { orders: order } });
+    
+            return order;
+        },
+        
+        updateProduct: async (parent, { _id, quantity }) => {
+            const decrement = Math.abs(quantity) * -1;
+    
+            return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
         }
     }
 };
