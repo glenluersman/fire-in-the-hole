@@ -28,6 +28,9 @@ const productSchema = new Schema(
       type: Number,
       min: 0,
       default: 0
+    },
+    category: {
+      type: String
     }
   },
   {
