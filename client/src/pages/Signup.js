@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
 
 function Signup() {
   const [formState, setFormState] = useState({ email: '', password: '' });
+  const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    const mutationResponse = await ADD_USER({
+    const mutationResponse = await addUser({
       variables: {
         email: formState.email,
         password: formState.password,
@@ -30,7 +32,7 @@ function Signup() {
   };
 
   return (
-    <div className='container'>
+    <div>
       <Link to='/login'>Go to Login</Link>
 
       <h2>Signup</h2>
@@ -74,6 +76,9 @@ function Signup() {
             id='pwd'
             onChange={handleChange}
           />
+          <div>
+            <button type='submit'>Submit</button>
+          </div>
         </div>
       </form>
     </div>
