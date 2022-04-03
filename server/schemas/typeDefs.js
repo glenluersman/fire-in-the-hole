@@ -32,6 +32,11 @@ const typeDefs = gql`
         reviewText: String
     }
 
+    type Category {
+        _id: ID
+        categoryName: String
+    }
+
     type Auth {
         token: ID
         user: User
@@ -43,6 +48,7 @@ const typeDefs = gql`
         products: [Product]
         product(_id: String!): Product
         order(userId: ID!, orderId: ID!): Order
+        categories: [Category]
     }
 
     type Mutation {

@@ -1,5 +1,5 @@
 const db = require('../config/connection');
-const { User, Product } = require('../models');
+const { User, Product, Category } = require('../models');
 
 db.once('open', async () => {
 
@@ -13,7 +13,7 @@ db.once('open', async () => {
     description: "Acid Rain Scorpion Hot Sauce - The Moruga Scorpion chilli pepper, originating in Trinidad, was proclaimed the hottest chilli pepper in the world scoring an unbelievable 2 Million Scoville Heat Units. Acid Rain's passion and skills in combining tremendous heat with wonderful flavors is proven twice over with this astonishing blend of pure Moruga Scorpion pepper topped with spices. We love it ! Try this sauce in chili's, soups, and on tacos.",
     ingredients: ['Trinidad Moruga Scorpion', 'Hatari Pepper', 'Habañero', 'Piquin', 'Ring of Fire', 'Peri-Peri', 'Tepin', 'Jalapeño Peppers', 'garlic', 'ginger', 'spices', 'salt', 'lemon', 'lime', 'orange juice', 'vinegar'],
     quantity: 3,
-    category: "X-Hot"
+    category: "Extra Hot"
     },
     {
     productName: "Angry Cock Hot Sauce",
@@ -22,7 +22,7 @@ db.once('open', async () => {
     description: "Angry Cock Hot Sauce - Made with 80% fresh Bhut Jolokia peppers 'Ghost Chile' and a blend of select spices makes Angry Cock an extract free ultra hot sauce.",
     ingredients: ['Bhut Jolokia Chilies', 'vinegar', 'onion', 'garlic', 'Black pepper', 'Chile Caribe', 'salt', 'dehydrated vegetables'],
     quantity: 5,
-    category: "X-Hot"
+    category: "Extra Hot"
     },
     {
       productName: "Ass in the E.R. Scorpion Pepper Sauce",
@@ -31,7 +31,7 @@ db.once('open', async () => {
     description: "Ass in the E.R. Scorpion Pepper Sauce - Joe Chileheads quest to seek out the hottest pepper pods on the planet brings him to the Emergency Room via Trinidad where he brought home the Trinidad Moruga Scorpion Chile Pepper. At over 2 million Scoville Units, the Scorpion packs almost twice the heat of a Ghost pepper and a sting to match. productNamed after a Scorpions tail barb, this fiery fruit is guaranteed to burn twice and leave a distinguishable welt on your backside.",
     ingredients: ['Trinidad Moruga Scorpion peppers', 'fresh carrots', 'onions', 'lime juice', 'vinegar', 'garlic', 'salt'],
     quantity: 2,
-    category: "X-Hot"
+    category: "Extra Hot"
     },
     {
       productName: "Hellfire First Blood Hot Sauce",
@@ -40,7 +40,7 @@ db.once('open', async () => {
     description: "Hellfire First Blood Hot Sauce - This sauce features the fresh all natural taste of the finest super hot peppers available with no added vinegar! It has a very high pepper content making for a super thick sauce! Like bottled Superhots picked fresh from the garden! One of my personal favorites due to the straight up flavors of the peppers including Trinidad Scorpions, Red 7-Pot, Bhut Jolokia and Chocolate Habañeros! We also added sundried tomatoes, garlic, sea salt and a touch of cumin and lemon juice! This sauce tastes great on just about anything! Especially good on Italian dishes. This all natural sauce is extremely hot! Feel the Heat & Enjoy!",
     ingredients: ['Bhut Jolokia Peppers', 'Trinidad Scorpion Peppers', 'Red 7 pod Peppers', 'Chocolate Habañero Peppers', 'sun-dried tomatoes', 'garlic', 'sea salt', 'cumin', 'lemon juice'],
     quantity: 7,
-    category: "X-Hot"
+    category: "Extra Hot"
     },
     {
     productName: "Hellfire Next Day You Pay Hot Sauce",
@@ -49,7 +49,7 @@ db.once('open', async () => {
     description: "Hellfire Next Day You Pay Hot Sauce is filled with pure pepper goodness including Bhut Jolokias (Ghost Peppers), 7 Pot Primos, Trinidad Scorpions, Red Habañeros, Red Jalapeños, and Cayenne Peppers. Its sure to please your pallete and desire for heat!",
     ingredients: ['Distilled vinegar', 'Cayenne Pepper mash', 'garlic', 'sun dried tomatoes', 'Jolokia Pepper mash', 'Red 7 Pot Primo Pepper mash', 'Red Habañero Pepper mash', 'Orange Habañero Pepper mash', 'cilantro', 'Red Jalapeño Pepper mash', 'Trinidad Scorpion Pepper mash', 'diced tomatoes', 'salt', 'cumin', 'onion', 'coriander', 'curry powder', 'lemon juice', 'lime juice'],
     quantity: 7,
-    category: "X-Hot"
+    category: "Extra Hot"
     },
     {
     productName: "'F' Milk Got Hot Sauce?",
@@ -166,6 +166,20 @@ db.once('open', async () => {
     username: "glen",
     email: "glen@gmail.com",
     password: "password"
+    }
+  ]);
+
+  await Category.deleteMany();
+
+  await Category.create([
+    {
+      categoryName: 'Extra Hot'
+    },
+    {
+      categoryName: 'Hot'
+    },
+    {
+      categoryName: 'Super Hot'
     }
   ]);
 
