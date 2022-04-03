@@ -1,4 +1,4 @@
-import { gql } from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 export const QUERY_USER = gql`
   {
@@ -23,8 +23,8 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_PRODUCTS = gql`
-  query getProducts($products: ID) {
-    products(products: $products) {
+  query getProducts($category: ID) {
+    products(category: $category) {
       _id
       productName
       price
@@ -32,11 +32,34 @@ export const QUERY_PRODUCTS = gql`
       ingredients
       image
       quantity
-      reviews {
+      category {
         _id
-        rating
-        reviewText
       }
     }
   }
 `;
+
+export const QUERY_ALL_PRODUCTS = gql`
+  {
+    products {
+      _id
+      productName
+      description
+      price
+      quantity
+      category {
+        name
+      }
+    }
+  }
+`;
+
+export const QUERY_CATEGORIES = gql`
+  {
+    categories {
+      _id
+      name
+    }
+  }
+`;
+

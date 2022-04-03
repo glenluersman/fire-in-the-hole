@@ -1,14 +1,16 @@
-import React from 'react';
-// import Cart from '../components/Cart';
+import React, { useState } from 'react';
+import CategoryMenu from '../components/CategoryMenu';
+import ProductList from '../components/ProductList';
 
 const Home = () => {
+  const [currentCategory, setCategory] = useState('');
 
-    return (
-        <div className='container'>
-            {/* <Cart /> */}
-        </div>
-    )
-
-}
+  return (
+    <div>
+      <CategoryMenu setCategory={setCategory} />
+      <ProductList currentCategory={currentCategory} />
+    </div>
+  );
+};
 
 export default Home;

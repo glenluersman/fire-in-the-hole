@@ -18,6 +18,7 @@ const typeDefs = gql`
         reviews: [Review]
         image: String
         quantity: Int
+        category: Category
     }
 
     type Order {
@@ -45,7 +46,7 @@ const typeDefs = gql`
     type Query {
         users: [User]
         user(_id: String!): User
-        products: [Product]
+        products(category: ID, name: String): [Product]
         product(_id: String!): Product
         order(userId: ID!, orderId: ID!): Order
         categories: [Category]
