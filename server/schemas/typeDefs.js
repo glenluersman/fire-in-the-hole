@@ -58,6 +58,7 @@ const typeDefs = gql`
         addReview(rating: Int!, reviewText: String, userId: ID, productID: ID): Review
         addOrder(_id: ID!, products: [ID]!): Order
         updateProduct(_id: ID!, quantity: Int!): Product
+        updateUser(username: String, email: String, password: String): User
     }
 
 `;
