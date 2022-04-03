@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
+import { LOGIN } from '../utils/mutations';
 
-function Login() {
+function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const mutationResponse = await Login({
+      const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password },
       });
       const token = mutationResponse.data.login.token;
@@ -28,7 +31,7 @@ function Login() {
   };
 
   return (
-    <div className='container'>
+    <div>
       <Link to='/signup'>Go to Signup</Link>
 
       <h2>Login</h2>
@@ -52,10 +55,11 @@ function Login() {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <p className='error-text'>The provided credentials are incorrect</p>
-        </div>
-
+        {error ? (
+          <div>
+            <p>The provided credentials are incorrect</p>
+          </div>
+        ) : null}
         <div>
           <button type='submit'>Submit</button>
         </div>
