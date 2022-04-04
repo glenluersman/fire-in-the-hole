@@ -1,0 +1,27 @@
+header {
+background-image: url(../public/images/Pepper-Banner.jpeg);
+background-repeat: no-repeat;
+background-size: 500px;
+background-position: right;
+}
+
+#mainJumbo {
+font-family: Luminari, fantasy;
+font-size: 75px;
+}
+
+#subtext {
+font-family: fantasy;
+font-size: 25px;
+}
+
+#verify {
+background-color: tomato;
+border-style: solid;
+border-color: black;
+border-width: 2px;
+border-radius: 3px;
+max-width: 250px;
+padding: 25px;
+}
+

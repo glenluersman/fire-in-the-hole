@@ -19,13 +19,11 @@ function Nav() {
       );
     } else {
       return (
-        <ul>
+        <ul id='verify'>
           <li>
-            <Link to='/signup'>Signup</Link>
+          <Link to='/login'>Login</Link>
           </li>
-          <li>
-            <Link to='/login'>Login</Link>
-          </li>
+          <li><p>Not a member? Click <Link to='/signup'>Here</Link> to join.</p></li> 
         </ul>
       );
     }
@@ -34,11 +32,12 @@ function Nav() {
   return (
     <header>
       <h1>
-        <Link to='/'>Fir In The Hole</Link>
+        <Link to='/' id ='mainJumbo'>Fire In The Hole</Link>
       </h1>
+      <h4 id='subtext'>The one stop shop for all your hot sauce needs.</h4>
       <nav>{showNavigation()}</nav>
     </header>
-  );
+  ); 
 }
 
 export default Nav;
