@@ -17,7 +17,7 @@ export const ADD_ORDER = gql`
       purchaseDate
       products {
         _id
-        productName
+        name
         price
         description
         quantity
@@ -47,7 +47,7 @@ export const ADD_USER = gql`
 
 export const ADD_PRODUCT = gql`
   mutation addProduct(
-    $productName: String!
+    $name: String!
     $price: Float!
     $description: String!
     $ingredients: [String]
@@ -55,14 +55,14 @@ export const ADD_PRODUCT = gql`
     $quantity: Int
   ) {
     addProduct(
-      productName: $productName
+      name: $name
       price: $price
       description: $description
       ingredients: $ingredients
       image: $image
       quantity: $quantity
     ) {
-      productName
+      name
       price
       description
       ingredients

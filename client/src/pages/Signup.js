@@ -39,7 +39,7 @@ function Signup() {
         <div>
           <label htmlFor='username'>Username:</label>
           <input
-            placeholder='First'
+            placeholder='username'
             name='username'
             type='username'
             id='username'

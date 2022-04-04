@@ -5,7 +5,7 @@ class AuthService {
     return decode(this.getToken());
   }
 
-  loggedIn() {
+  loggedIn() {    
     const token = this.getToken();
     return !!token && !this.isTokenExpired(token);
   }
@@ -21,19 +21,19 @@ class AuthService {
     }
   }
 
-  getToken() {
+  getToken() {    
     return localStorage.getItem('id_token');
   }
 
-  login(idToken) {
+  login(idToken) {    
     localStorage.setItem('id_token', idToken);
 
     window.location.assign('/');
   }
 
-  logout() {
+  logout() {    
     localStorage.removeItem('id_token');
-
+    
     window.location.assign('/');
   }
 }
