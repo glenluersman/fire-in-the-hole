@@ -26,7 +26,7 @@ function Detail() {
       {currentProduct ? (
         <div>
           <Link to='/'>Back to Products</Link>
-          <h2>{currentProduct.productName}</h2>
+          <h2>{currentProduct.name}</h2>
           <p>{currentProduct.description}</p>
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
@@ -36,7 +36,7 @@ function Detail() {
 
           <img
             src={`/images/${currentProduct.image}`}
-            alt={currentProduct.productName}
+            alt={currentProduct.name}
           />
         </div>
       ) : null}

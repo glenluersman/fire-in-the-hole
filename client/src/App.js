@@ -1,12 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Nav from './components/Nav';
-import Home from './pages/Home';
-import Detail from './pages/Detail';
-import Login from './pages/Login';
-import OrderHistory from './pages/OrderHistory';
-import Signup from './pages/Signup';
-import NoMatch from './pages/NoMatch';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -15,8 +8,16 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import Home from './pages/Home';
+import Detail from './pages/Detail';
+import NoMatch from './pages/NoMatch';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Nav from './components/Nav';
+import OrderHistory from './pages/OrderHistory';
+
 const httpLink = createHttpLink({
-  uri: './graphql',
+  uri: '/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -40,14 +41,14 @@ function App() {
       <Router>
         <div>
           <Nav />
-          <Routes>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/signup' component={Signup} />
-            <Route exact path='/orderHistory' component={OrderHistory} />
-            <Route exact path='/products/:id' component={Detail} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/orderHistory" component={OrderHistory} />
+            <Route exact path="/products/:id" component={Detail} />
             <Route component={NoMatch} />
-          </Routes>
+          </Switch>
         </div>
       </Router>
     </ApolloProvider>

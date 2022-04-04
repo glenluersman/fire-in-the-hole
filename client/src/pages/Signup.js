@@ -15,8 +15,7 @@ function Signup() {
       variables: {
         email: formState.email,
         password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
+        username: formState.username,
       },
     });
     const token = mutationResponse.data.addUser.token;
@@ -38,25 +37,15 @@ function Signup() {
       <h2>Signup</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
-          <label htmlFor='firstName'>First Name:</label>
+          <label htmlFor='username'>Username:</label>
           <input
-            placeholder='First'
-            name='firstName'
-            type='firstName'
-            id='firstName'
+            placeholder='username'
+            name='username'
+            type='username'
+            id='username'
             onChange={handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor='lastName'>Last Name:</label>
-          <input
-            placeholder='lastName'
-            name='lastName'
-            type='firstName'
-            id='lastName'
-            onChange={handleChange}
-          />
-        </div>
+        </div>        
         <div>
           <label htmlFor='email'>Email:</label>
           <input

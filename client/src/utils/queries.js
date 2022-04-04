@@ -3,14 +3,13 @@ import { gql } from '@apollo/client';
 export const QUERY_USER = gql`
   {
     user {
-      firstName
-      lastName
+      username
       orders {
         _id
         purchaseDate
         products {
           _id
-          productName
+          name
           price
           description
           ingredients
@@ -26,12 +25,11 @@ export const QUERY_PRODUCTS = gql`
   query getProducts($category: ID) {
     products(category: $category) {
       _id
-      productName
+      name
       price
-      description
-      ingredients
-      image
+      description           
       quantity
+      image
       category {
         _id
       }
@@ -43,7 +41,7 @@ export const QUERY_ALL_PRODUCTS = gql`
   {
     products {
       _id
-      productName
+      name
       description
       price
       quantity
