@@ -30,6 +30,7 @@ export const QUERY_PRODUCTS = gql`
       description           
       quantity
       image
+      ingredients
       category {
         _id
       }
