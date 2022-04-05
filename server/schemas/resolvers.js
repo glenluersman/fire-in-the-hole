@@ -6,7 +6,7 @@ const resolvers = {
     Query: {
         user: async (parent, args, context) => {
             if (context.user) {
-                const user = await User.findById(_id)
+                const user = await User.findById(context.user._id)
                     .populate('reviews')
                     .populate({
                         path: 'orders.products',
