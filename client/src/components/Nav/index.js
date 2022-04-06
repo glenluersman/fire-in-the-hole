@@ -34,7 +34,7 @@ function Nav() {
       <h1>
         <Link to='/'>Fire In The Hole</Link>
       </h1>
-      <h4 id='subtext'>The one stop shop for all your hot sauce needs.</h4>
+      <h4 id='jumboSubtext'>The one stop shop for all your hot sauce needs.</h4>
       <nav>{showNavigation()}</nav>
     </header>
   ); 
