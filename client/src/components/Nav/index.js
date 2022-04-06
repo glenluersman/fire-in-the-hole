@@ -31,10 +31,11 @@ function Nav() {
 
   return (
     <header id ='mainJumbo'>
-      <h1>
+      <h1 id='titleMain'>
         <Link to='/'>Fire In The Hole</Link>
-      </h1>
+      <br/>
       <h4 id='jumboSubtext'>The one stop shop for all your hot sauce needs.</h4>
+      </h1>
       <nav>{showNavigation()}</nav>
     </header>
   ); 
