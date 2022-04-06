@@ -3,9 +3,8 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type User {
         _id: ID
-        username: String!
+        username: String
         email: String!
-        reviews: [Review]
         orders: [Order]
     }
     
@@ -31,6 +30,7 @@ const typeDefs = gql`
         _id: ID
         rating: Int!
         reviewText: String
+        userId: User
     }
 
     type Category {
