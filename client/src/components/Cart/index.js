@@ -28,6 +28,7 @@ const Cart = () => {
 
   useEffect(() => {
     if (data) {
+      console.log(data);
       stripePromise.then((res) => {
         res.redirectToCheckout({ sessionId: data.checkout.session });
       });
@@ -58,6 +59,8 @@ const Cart = () => {
     getCheckout({
       variables: { products: productIds }
     });
+
+    console.log(productIds);
   }
 
   if (!state.cartOpen) {
