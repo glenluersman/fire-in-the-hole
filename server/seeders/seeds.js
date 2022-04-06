@@ -149,7 +149,7 @@ db.once('open', async () => {
     {
     name: "Hellfire Doomed Hot Sauce",
     image: "doomed.jpg",
-    price: 17.99,
+    price: 17.98,
     description: "Doomed is Hellfire's hottest sauce! Spiked with 6.66 million SHU natural pepper extract, this sauce tests out in the lab at 2.76 million SHUs! Once you try this sauce you will know that you are Doomed! Use with caution!",
     ingredients: ['Distilled Vinegar', 'Water', 'Red Habanero Pepper Mash', 'Trinidad Scorpion Pepper Mash', 'Mustard', '6.66M SHU Pepper Extract', 'Garlic', 'Onions', 'Black Pepper', 'Salt', 'Turmeric and Natural Gum'],
     quantity: 6,
