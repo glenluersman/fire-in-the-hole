@@ -20,10 +20,10 @@ function ProductList({ currentCategory }) {
   }
 
   return (
-    <div>
+    <div id='ourProducts'>
       <h2>Our Products:</h2>
       {products.length ? (
-        <div>
+        <div id='productList'>
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}

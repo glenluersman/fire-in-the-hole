@@ -6,7 +6,7 @@ function ProductItem(item) {
   const { image, name, _id, price, quantity } = item;
 
   return (
-    <div>
+    <div id='hotSauce'>
       <Link to={`/products/${_id}`}>
         <img alt={name} src={`/images/${image}`} />
         <p>{name}</p>

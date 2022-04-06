@@ -7,7 +7,7 @@ function CategoryMenu({ setCategory }) {
   const categories = categoryData?.categories || [];
 
   return (
-    <div>
+    <div id='chooseCategory'>
       <h2>Choose a Category:</h2>
       {categories.map((item) => (
         <button

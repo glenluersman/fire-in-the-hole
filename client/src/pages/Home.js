@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div>
-      <CategoryMenu setCategory={setCategory} />
+      <CategoryMenu setCategory={setCategory} id='categoryCategory'/>
       <ProductList currentCategory={currentCategory} />
     </div>
   );
