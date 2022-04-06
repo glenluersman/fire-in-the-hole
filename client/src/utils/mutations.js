@@ -60,11 +60,7 @@ export const ADD_REVIEW = gql`
       reviewText: $reviewText
       userId: $userId
       productID: $productID
-    ) {
-      token
-      user {
-        _id
-      }
+      )
     }
   }
 `;

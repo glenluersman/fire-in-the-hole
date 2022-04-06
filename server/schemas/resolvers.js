@@ -8,7 +8,6 @@ const resolvers = {
         user: async (parent, args, context) => {
             if (context.user) {
                 const user = await User.findById(context.user._id)
-                    .populate('reviews')
                     .populate({
                         path: 'orders.products',
                         populate: 'category'
@@ -37,13 +36,15 @@ const resolvers = {
 
             return await Product.find(params)
             .populate('category')
-            .populate('reviews');
+            .populate('reviews')
+            .populate('users');
         },
 
         product: async (parent, { _id }) => {
             return await Product.findById({ _id })
             .populate('category')
-            .populate('reviews');
+            .populate('reviews')
+            .populate('users');
         },
 
         order: async (parent, { orderId }, context) => {
@@ -81,7 +82,7 @@ const resolvers = {
             // generate price id using the product id
             const price = await stripe.prices.create({
               product: product.id,
-              unit_amount: products[i].price * 100,
+              unit_amount: (products[i].price * 1000)/10,
               currency: 'usd',
             });
 
@@ -131,14 +132,8 @@ const resolvers = {
             return { token, user };
         },
 
-        addReview: async (parent, args) => {
-            const review = await Review.create({ rating: args.rating, reviewText: args.reviewText });
-
-            await User.findByIdAndUpdate(
-                { _id: args.userId },
-                { $push: { reviews: review._id } },
-                { new: true, runValidators: true }
-            );
+        addReview: async (parent, args, context) => {
+            const review = await Review.create({ rating: args.rating, reviewText: args.reviewText, productId: args.productId, userId: context.user._id });
 
             await Product.findByIdAndUpdate(
                 { _id: args.productID },
