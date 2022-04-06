@@ -11,9 +11,9 @@ const typeDefs = gql`
     
     type Product {
         _id: ID
-        name: String!
-        price: Float!
-        description: String!
+        name: String
+        price: Float
+        description: String
         ingredients: [String]
         reviews: [Review]
         image: String
