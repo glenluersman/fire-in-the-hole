@@ -3,19 +3,24 @@ import { gql } from '@apollo/client';
 export const QUERY_USER = gql`
   {
     user {
-      username
+      firstName
+      lastName
       orders {
         _id
         purchaseDate
         products {
           _id
           name
-          price
           description
-          ingredients
-          image
+          price
           quantity
+          image
         }
+      }
+      reviews {
+        _id
+        rating
+        reviewText
       }
     }
   }
@@ -34,6 +39,11 @@ export const QUERY_PRODUCTS = gql`
       category {
         _id
       }
+      reviews {
+        _id
+        rating
+        reviewText
+      }
     }
   }
 `;
@@ -49,6 +59,11 @@ export const QUERY_ALL_PRODUCTS = gql`
       category {
         name
       }
+      reviews {
+        _id
+        rating
+        reviewText
+      }
     }
   }
 `;
@@ -58,6 +73,14 @@ export const QUERY_CATEGORIES = gql`
     categories {
       _id
       name
+    }
+  }
+`;
+
+export const QUERY_CHECKOUT = gql`
+  query getCheckout($products: [ID]!) {
+    checkout(products: $products) {
+      session
     }
   }
 `;
