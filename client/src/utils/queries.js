@@ -3,8 +3,8 @@ import { gql } from '@apollo/client';
 export const QUERY_USER = gql`
   {
     user {
-      firstName
-      lastName
+      _id
+      username
       orders {
         _id
         purchaseDate
