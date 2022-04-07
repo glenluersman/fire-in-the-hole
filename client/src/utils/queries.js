@@ -17,11 +17,6 @@ export const QUERY_USER = gql`
           image
         }
       }
-      reviews {
-        _id
-        rating
-        reviewText
-      }
     }
   }
 `;
@@ -43,6 +38,10 @@ export const QUERY_PRODUCTS = gql`
         _id
         rating
         reviewText
+        userId {
+          _id
+          username
+        }
       }
     }
   }
@@ -63,6 +62,10 @@ export const QUERY_ALL_PRODUCTS = gql`
         _id
         rating
         reviewText
+        userId {
+          _id
+          username
+        }
       }
     }
   }

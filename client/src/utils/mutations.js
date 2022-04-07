@@ -49,22 +49,14 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview(
-    $rating: Int!
-    $reviewText: String
-    $userId: ID
-    $productID: ID
-  ) {
-    addReview(
-      rating: $rating
-      reviewText: $reviewText
-      userId: $userId
-      productID: $productID
-    ) {
-      token
-      user {
-        _id
-      }
+mutation AddReview($rating: Int!, $reviewText: String, $userId: ID, $productId: ID) {
+  addReview(rating: $rating, reviewText: $reviewText, userId: $userId, productID: $productId) {
+    _id
+    rating
+    reviewText
+    userId {
+      _id  
     }
   }
+}
 `;
