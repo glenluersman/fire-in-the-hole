@@ -71,7 +71,8 @@ const Cart = () => {
   }
 
   return (
-    <div className="cart">
+    <div className="cart" id="shoppingCart">
+      <div className="card" id="shoppingCart">
       <div className="close" onClick={toggleCart}>[close]</div>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
@@ -99,6 +100,7 @@ const Cart = () => {
           You haven't added anything to your cart yet!
         </h3>
       )}
+      </div>
     </div>
   );
 };

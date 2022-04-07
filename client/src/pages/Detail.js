@@ -86,7 +86,7 @@ function Detail() {
   };
 
   return (
-    <>
+    <div className='card' id='productInfo'>
       {currentProduct ? (
         <div>
           <Link to='/'>Back to Products</Link>
@@ -111,7 +111,7 @@ function Detail() {
       ) : null}
       {loading ? <img src={spinner} alt='loading' /> : null}
       <Cart />
-    </>
+    </div>
   );
 }
 

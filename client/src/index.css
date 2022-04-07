@@ -41,7 +41,6 @@ body {
   background-repeat: repeat;
   background-size: 100%;
 }
-/* End of Body Properties */
 
 /* Category Styling */
 #chooseCategory {
@@ -57,10 +56,6 @@ body {
 #categoryButtons {
   padding: 15px;
   margin: 5px;
-}
-
-#productInfo {
-  background-color: white;
 }
 
 #ourProducts {
@@ -91,8 +86,20 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  justify-content:space-around;
+  margin: 5px;
 }
 
+#shoppingCart {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.card {
+  background-color: white;
+}
+
+footer {
+color: white;
+}
 
