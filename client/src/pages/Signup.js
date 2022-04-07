@@ -31,9 +31,7 @@ function Signup() {
   };
 
   return (
-    <div>
-      <Link to='/login'>Go to Login</Link>
-
+    <div className='card mx-auto' id='signupCard'>
       <h2>Signup</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
@@ -66,10 +64,12 @@ function Signup() {
             onChange={handleChange}
           />
           <div>
-            <button type='submit'>Submit</button>
+            <button type='submit' className='btn btn-danger'>Submit</button>
           </div>
         </div>
       </form>
+
+      <Link to='/login'>Go to Login</Link>
     </div>
   );
 }

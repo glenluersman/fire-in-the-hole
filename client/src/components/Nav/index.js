@@ -19,12 +19,14 @@ function Nav() {
       );
     } else {
       return (
-        <ul id='verify'>
+        <div className='card mx-auto' id='loginSignup'>
+        <ul>
           <li>
           <Link to='/login'>Login</Link>
           </li>
           <li><p>Not a member? Click <Link to='/signup'>Here</Link> to join.</p></li> 
         </ul>
+        </div>
       );
     }
   }

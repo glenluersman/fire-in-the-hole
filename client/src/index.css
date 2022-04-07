@@ -3,7 +3,7 @@ header {
   align-content: center;
 }
 
-#mainJumbo {
+#mainJumbo h1 {
   font-family: Luminari, fantasy;
   font-size: 75px;
   text-align: center;
@@ -19,7 +19,7 @@ header {
 /* End of Header */
 
 /* Body Properties */
-ul {
+/* ul {
   background-color: tomato;
   border-style: solid;
   border-color: black;
@@ -31,7 +31,7 @@ ul {
   font-size: large;
   text-align: left;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+} */
 
 button {
   border: 1px solid black;
@@ -53,43 +53,50 @@ button:hover {
 body {
   background-image: url(./assets/images/peakpx.jpg);
   background-repeat: repeat;
-  background-size: contain;
+  background-size: 100%;
 }
 /* End of Body Properties */
 
 /* Category Styling */
 #chooseCategory {
   max-width: fit-content;
-  background-color: tomato;
-  border: 1px solid black;
-  border-radius: 5px;
   display: flex;
   padding: 10px;
+  opacity: 0.8;
 }
 
-#ourProducts {
-  opacity: 0.8;
+.cardyB {
+  opacity: 0.9;
+  padding: 20px;
+  width: max-content;
+  text-align: center;
+  background-color: white;
 }
 
 #ourProducts h2 {
   color: white;
 }
 
-#productList {
-  width: auto;
-  background-color: tomato;
-  padding-bottom: 10px;
-  border-radius: 5px;
-  display: flex;
-  flex-wrap: wrap;
+#loginCard {
+  max-width: fit-content;
+  padding: 25px;
 }
 
-/* Product Styling */
-#hotSauce {
-  padding: 10px;
-  border: 1px solid black;
-  background-color: white;
-  margin: 5px;
+#signupCard {
+  max-width: fit-content;
+  padding: 25px;
 }
+
+#orderHistory {
+  max-width: fit-content;
+  padding: 25px;
+}
+
+#loginSignup {
+  max-width: fit-content;
+  padding: 5px;
+}
+
+
 
 

@@ -7,8 +7,8 @@ const Home = () => {
   const [currentCategory, setCategory] = useState('');
 
   return (
-    <div>
-      <CategoryMenu setCategory={setCategory} id='categoryCategory'/>
+    <div className='container'>
+      <CategoryMenu setCategory={setCategory}/>
       <ProductList currentCategory={currentCategory} />
       <Cart />
     </div>
