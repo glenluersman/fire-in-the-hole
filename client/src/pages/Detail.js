@@ -85,13 +85,19 @@ function Detail() {
     idbPromise('cart', 'delete', { ...currentProduct });
   };
 
+  const handleChange = () => {
+
+  }
+
   return (
     <>
       {currentProduct ? (
         <div>
           <Link to='/'>Back to Products</Link>
           <h2>{currentProduct.name}</h2>
+          <p>Rating</p>
           <p>{currentProduct.description}</p>
+          <p>Ingredients</p>
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
             <button onClick={addToCart}>Add to Cart</button>
@@ -111,6 +117,17 @@ function Detail() {
       ) : null}
       {loading ? <img src={spinner} alt='loading' /> : null}
       <Cart />
+      <form>
+        <label htmlFor='review'>Review:</label>
+        <textarea
+          placeholder='type review here'
+          name='review'
+          type='text'
+          id='review'
+          onChange={handleChange}
+        />
+        <button type="submit">Add Review</button>
+      </form>
     </>
   );
 }
