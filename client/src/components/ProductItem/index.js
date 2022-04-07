@@ -34,7 +34,7 @@ function ProductItem(item) {
   }
 
   return (
-    <div className='cardyB'>
+    <div className='col'>
       <Link to={`/products/${_id}`}>
         <img alt={name} src={`/images/${image}`} />
         <p>{name}</p>

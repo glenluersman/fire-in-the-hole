@@ -5,8 +5,9 @@ header {
 
 #mainJumbo h1 {
   font-family: Luminari, fantasy;
-  font-size: 75px;
+  font-size: 100px;
   text-align: center;
+  padding: 50px;
 }
 
 #jumboSubtext {
@@ -17,21 +18,6 @@ header {
 } 
 
 /* End of Header */
-
-/* Body Properties */
-/* ul {
-  background-color: tomato;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  border-radius: 5px;
-  max-width: 250px;
-  padding: 25px;
-  flex-wrap: wrap;
-  font-size: large;
-  text-align: left;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-} */
 
 button {
   border: 1px solid black;
@@ -61,19 +47,23 @@ body {
 #chooseCategory {
   max-width: fit-content;
   display: flex;
-  padding: 10px;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: space-around;
   opacity: 0.8;
+  color: white;
 }
 
-.cardyB {
-  opacity: 0.9;
-  padding: 20px;
-  width: max-content;
-  text-align: center;
+#categoryButtons {
+  padding: 15px;
+  margin: 5px;
+}
+
+#productInfo {
   background-color: white;
 }
 
-#ourProducts h2 {
+#ourProducts {
   color: white;
 }
 
@@ -92,11 +82,17 @@ body {
   padding: 25px;
 }
 
-#loginSignup {
-  max-width: fit-content;
-  padding: 5px;
+#navbar {
+  text-align: center;
+  color: white;
 }
 
+#productInfo {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content:space-around;
+}
 
 
 
