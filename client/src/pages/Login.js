@@ -31,9 +31,7 @@ function Login(props) {
   };
 
   return (
-    <div>
-      <Link to='/signup'>Go to Signup</Link>
-
+    <div className='card mx-auto' id='loginCard'>
       <h2>Login</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
@@ -61,9 +59,10 @@ function Login(props) {
           </div>
         ) : null}
         <div>
-          <button type='submit'>Submit</button>
+          <button class='btn btn-danger'type='submit'>Submit</button>
         </div>
       </form>
+      <Link to='/signup'>Go to Signup</Link>
     </div>
   );
 }

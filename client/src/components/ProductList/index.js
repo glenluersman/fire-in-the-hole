@@ -52,9 +52,9 @@ function ProductList() {
 
   return (
     <div>
-      <h2>Our Products:</h2>
+      <h2 id='ourProducts'>Our Products:</h2>
       {state.products.length ? (
-        <div>
+        <div className='container justify-content-center' id='productInfo'>
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}

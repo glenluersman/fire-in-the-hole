@@ -15,10 +15,9 @@ function OrderHistory() {
   return (
     <>
       <div>
-        <Link to='/'>Back to Products</Link>
 
         {user ? (
-          <>
+          <div className='card mx-auto' id='orderHistory'>
             <h2>
               Order History for {user.username}              
             </h2>
@@ -44,7 +43,8 @@ function OrderHistory() {
                 </div>
               </div>
             ))}
-          </>
+                    <Link to='/'>Back to Products</Link>
+          </div>
         ) : null}
       </div>
     </>
