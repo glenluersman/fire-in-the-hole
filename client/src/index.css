@@ -1,4 +1,8 @@
 /* Header */
+header {
+  align-content: center;
+}
+
 #mainJumbo {
   font-family: Luminari, fantasy;
   font-size: 75px;
@@ -7,19 +11,11 @@
 
 #jumboSubtext {
   font-family: fantasy;
-  color: black;
+  color: white;
   font-size: 25px;
-  text-shadow: 2px 2px 5px red;
-  /* background-color: white;
-  border: 1px solid black;
-  max-width: fit-content; */
-}
+  text-shadow: 2px 2px 5px blue;
+} 
 
-#titleMain {
-  background-color: white;
-  border: 3px solid black;
-  border-radius: 35px;
-}
 /* End of Header */
 
 /* Body Properties */
@@ -55,8 +51,9 @@ button:hover {
 }
 
 body {
-  background-image: url(./assets/images/pepper-background.png);
+  background-image: url(./assets/images/peakpx.jpg);
   background-repeat: repeat;
+  background-size: contain;
 }
 /* End of Body Properties */
 
@@ -66,21 +63,16 @@ body {
   background-color: tomato;
   border: 1px solid black;
   border-radius: 5px;
-  max-width: 450px;
   display: flex;
   padding: 10px;
 }
 
 #ourProducts {
-  width: auto;
-  background-color: tomato;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  border: 1px solid black;
+  opacity: 0.8;
+}
+
+#ourProducts h2 {
+  color: white;
 }
 
 #productList {
@@ -90,7 +82,6 @@ body {
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
 }
 
 /* Product Styling */

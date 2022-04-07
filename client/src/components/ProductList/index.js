@@ -53,13 +53,8 @@ function ProductList() {
   return (
     <div id='ourProducts'>
       <h2>Our Products:</h2>
-<<<<<<< HEAD
-      {products.length ? (
-        <div id='productList'>
-=======
       {state.products.length ? (
         <div>
->>>>>>> af905485decba443eef412f57069f479d0d12dc3
           {filterProducts().map((product) => (
             <ProductItem
               key={product._id}
