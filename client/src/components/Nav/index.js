@@ -27,11 +27,9 @@ function Nav() {
   }
 
   return (
-    <header id ='mainJumbo'>
-      <h1 id='titleMain'>
+    <header>
+      <h1>
         <Link to='/'>Fire In The Hole</Link>
-      <br/>
-      <h4 id='jumboSubtext'>The one stop shop for all your hot sauce needs.</h4>
       </h1>
       <nav>{showNavigation()}</nav>
     </header>

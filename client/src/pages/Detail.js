@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 
 import { QUERY_PRODUCTS } from '../utils/queries';
+import { ADD_REVIEW } from '../utils/mutations'
 import spinner from '../assets/spinner.gif';
 import { useStoreContext } from "../utils/GlobalState";
 import {
@@ -17,6 +18,10 @@ import { idbPromise } from "../utils/helpers";
 function Detail() {
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
+
+  const [formState, setFormState] = useState('');
+
+  const addReview = useMutation(ADD_REVIEW);
 
   const [currentProduct, setCurrentProduct] = useState({});
 
@@ -85,13 +90,40 @@ function Detail() {
     idbPromise('cart', 'delete', { ...currentProduct });
   };
 
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await addReview({
+        variables: { rating: formState.rating, reviewText: formState.reviewText, productId: currentProduct._id }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
   return (
     <div className='card' id='productInfo'>
       {currentProduct ? (
         <div>
+          {console.log(currentProduct)}
           <Link to='/'>Back to Products</Link>
           <h2>{currentProduct.name}</h2>
+          <p>Rating</p>
           <p>{currentProduct.description}</p>
+          <p>
+            {currentProduct.ingredients.map(ingredient => (
+            <li key={ingredient}>{ingredient}</li>
+            ))}
+          </p>
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
             <button onClick={addToCart}>Add to Cart</button>
@@ -111,7 +143,26 @@ function Detail() {
       ) : null}
       {loading ? <img src={spinner} alt='loading' /> : null}
       <Cart />
-    </div>
+      <form onSubmit={handleFormSubmit}>
+        <label htmlFor='rating'>Rating</label>
+        <input
+          placeholder='rating of 1-5'
+          name='rating'
+          type='rating'
+          id='rating'
+          onChange={handleChange}
+        />
+        <label htmlFor='reviewText'>Review:</label>
+        <textarea
+          placeholder='type review here'
+          name='reviewText'
+          type='text'
+          id='review'
+          onChange={handleChange}
+        />
+        <button type="submit">Add Review</button>
+      </form>
+    </>
   );
 }
 
