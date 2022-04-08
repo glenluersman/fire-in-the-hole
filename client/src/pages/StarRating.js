@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-import "./StarRatings.css";
+import "../assets/StarRatings.css";
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 
