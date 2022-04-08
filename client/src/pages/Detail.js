@@ -13,6 +13,7 @@ import {
 } from '../utils/actions';
 import Cart from '../components/Cart';
 import { idbPromise } from "../utils/helpers";
+import StarRating from './StarRating';
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -22,7 +23,7 @@ function Detail() {
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
-  const { products, cart } = state;
+  const { products, cart } = state;  
   
   useEffect(() => {
     // already in global store
@@ -92,6 +93,7 @@ function Detail() {
           <Link to='/'>Back to Products</Link>
           <h2>{currentProduct.name}</h2>
           <p>{currentProduct.description}</p>
+          <p><StarRating /></p>
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
             <button onClick={addToCart}>Add to Cart</button>
