@@ -59,7 +59,7 @@ function Login(props) {
           </div>
         ) : null}
         <div>
-          <button class='btn btn-danger'type='submit'>Submit</button>
+          <button className='btn btn-danger'type='submit'>Submit</button>
         </div>
       </form>
       <Link to='/signup'>Go to Signup</Link>

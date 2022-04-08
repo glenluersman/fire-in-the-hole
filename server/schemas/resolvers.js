@@ -36,15 +36,19 @@ const resolvers = {
 
             return await Product.find(params)
             .populate('category')
-            .populate('reviews')
-            .populate('users');
+            .populate({
+                path: 'reviews',
+                populate: {path: 'userId'}
+            });
         },
 
         product: async (parent, { _id }) => {
             return await Product.findById({ _id })
             .populate('category')
-            .populate('reviews')
-            .populate('users');
+            .populate({
+                path: 'reviews',
+                populate: {path: 'userId'}
+            });
         },
 
         order: async (parent, { orderId }, context) => {
@@ -136,7 +140,7 @@ const resolvers = {
             const review = await Review.create({ rating: args.rating, reviewText: args.reviewText, productId: args.productId, userId: context.user._id });
 
             await Product.findByIdAndUpdate(
-                { _id: args.productID },
+                { _id: args.productId },
                 { $push: { reviews: review._id } },
                 { new: true, runValidators: true }
             );

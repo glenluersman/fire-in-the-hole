@@ -7,11 +7,11 @@ function Nav() {
     if (Auth.loggedIn()) {
       return (
         <div className='container' id='navbar'>
-            <div class="row">
-              <div class="col-6">
+            <div className="row">
+              <div className="col-6">
                 <h3><Link to='/orderHistory'>Order History</Link></h3>
               </div>
-              <div class="col-6">
+              <div className="col-6">
               <h3><a href='/' onClick={() => Auth.logout()}>Logout</a></h3>
             </div>
           </div>

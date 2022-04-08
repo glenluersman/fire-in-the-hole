@@ -21,13 +21,14 @@ function Detail() {
 
   const [formState, setFormState] = useState('');
 
-  const addReview = useMutation(ADD_REVIEW);
+  const [addReview] = useMutation(ADD_REVIEW);
 
   const [currentProduct, setCurrentProduct] = useState({});
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   const { products, cart } = state;
+  
   
   useEffect(() => {
     // already in global store
@@ -92,10 +93,10 @@ function Detail() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
+      const rating = parseInt(formState.rating);
       await addReview({
-        variables: { rating: formState.rating, reviewText: formState.reviewText, productId: currentProduct._id }
+        variables: { rating: rating, reviewText: formState.reviewText, productId: currentProduct._id }
       });
     } catch (e) {
       console.log(e);
@@ -112,18 +113,20 @@ function Detail() {
 
   return (
     <div className='card' id='productInfo'>
-      {currentProduct ? (
+      {currentProduct.ingredients ? (
         <div>
-          {console.log(currentProduct)}
           <Link to='/'>Back to Products</Link>
           <h2>{currentProduct.name}</h2>
-          <p>Rating</p>
+          
           <p>{currentProduct.description}</p>
-          <p>
-            {currentProduct.ingredients.map(ingredient => (
-            <li key={ingredient}>{ingredient}</li>
-            ))}
-          </p>
+          {currentProduct.ingredients.length ? (
+            <><h3>Ingredients</h3><ul>
+              {currentProduct.ingredients.map(ingredient => (
+                <li key={ingredient}>{ingredient}</li>
+              ))}
+            </ul></>
+          ) : null
+          }
           <p>
             <strong>Price:</strong>${currentProduct.price}{' '}
             <button onClick={addToCart}>Add to Cart</button>
@@ -139,30 +142,41 @@ function Detail() {
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           />
+          
+          <form onSubmit={handleFormSubmit}>
+            <label htmlFor='rating'>Rating</label>
+            <input
+              placeholder='rating of 1-5'
+              name='rating'
+              type='rating'
+              id='rating'
+              onChange={handleChange}
+            />
+            <label htmlFor='reviewText'>Review:</label>
+            <textarea
+              placeholder='type review here'
+              name='reviewText'
+              type='text'
+              id='review'
+              onChange={handleChange}
+            />
+            <button type="submit">Add Review</button>
+          </form>
+          
+          <div>
+            <ul style={{ listStyleType: "none" }}>
+              {currentProduct.reviews &&
+                currentProduct.reviews.map(review => (
+                  <li key={review._id}><span>{review.userId.username} says... </span>{review.reviewText}</li>
+                ))
+              }
+            </ul>
+          </div>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt='loading' /> : null}
       <Cart />
-      <form onSubmit={handleFormSubmit}>
-        <label htmlFor='rating'>Rating</label>
-        <input
-          placeholder='rating of 1-5'
-          name='rating'
-          type='rating'
-          id='rating'
-          onChange={handleChange}
-        />
-        <label htmlFor='reviewText'>Review:</label>
-        <textarea
-          placeholder='type review here'
-          name='reviewText'
-          type='text'
-          id='review'
-          onChange={handleChange}
-        />
-        <button type="submit">Add Review</button>
-      </form>
-    </>
+    </div>
   );
 }
 
