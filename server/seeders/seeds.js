@@ -5,46 +5,46 @@ db.once('open', async () => {
 
   await User.deleteMany();
 
-  const user = await User.insertMany([
+  const user = await User.create([
     {
     username: "alan",
     email: "alan@gmail.com",
-    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
+    password: "password"
     },
     {
     username: "niraj",
     email: "niraj@gmail.com",
-    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
+    password: "password"
     },
     {
     username: "jacob",
     email: "jacob@gmail.com",
-    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
+    password: "password"
     },
     {
     username: "glen",
     email: "glen@gmail.com",
-    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
+    password: "password"
     },
     {
     username: "wendy",
     email: "wendy@gmail.com",
-    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
+    password: "password"
     },
     {
     username: "danielle",
     email: "danielle@gmail.com",
-    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
+    password: "password"
     },
     {
     username: "sarah",
     email: "sarah@gmail.com",
-    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
+    password: "password"
     },
     {
     username: "paige",
     email: "paige@gmail.com",
-    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
+    password: "password"
     }
   ]);
 

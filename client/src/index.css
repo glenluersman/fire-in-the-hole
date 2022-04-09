@@ -25,13 +25,14 @@ header h1 {
 header h3 {
   font-family: fantasy;
   font-size: 25px;
-} 
+}
 
 header nav {
   position: absolute;
   top: 20px;
   left: 20px;
 }
+
 /* End of Header */
 
 /* General Styling */
@@ -76,6 +77,7 @@ a {
   margin-right: auto;
   margin-bottom: 50px;
 }
+
 /* General Styling */
 
 /* Nav Styling */
@@ -86,6 +88,7 @@ a {
   margin-bottom: 50px;
   color: white;
 }
+
 /* End Nav Styling */
 
 /* Category Styling */
@@ -103,6 +106,7 @@ a {
   margin: 10px;
   border-radius: 0.25rem;
 }
+
 /* End Category Styling */
 
 /* Product Styling */
@@ -148,6 +152,7 @@ a {
   border-radius: 0.25rem;
   box-shadow: 1px 1px 3px 3px #b2a9a9;
 }
+
 /* End Product Styling */
 
 /* Detail Styling */
@@ -156,12 +161,14 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
 /* End Detail Styling */
 
 /* Success Styling */
 .success {
   color: white;
 }
+
 /* End Success Styling */
 
 /* Form Styling */
@@ -184,6 +191,7 @@ textarea {
   width: 90%;
   border-radius: 0.25rem;
 }
+
 /* End Form Styling */
 
 /* End Mobile Responsive Styling */
@@ -208,5 +216,5 @@ textarea {
     width: 45%;
   }
 }
-/* End Mobile Responsive Styling */
 
+/* End Mobile Responsive Styling */
