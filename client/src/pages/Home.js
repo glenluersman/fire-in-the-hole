@@ -7,11 +7,11 @@ const Home = () => {
   const [currentCategory, setCategory] = useState('');
 
   return (
-    <div>
+    <div className='container'>
       <CategoryMenu setCategory={setCategory}/>
       <ProductList currentCategory={currentCategory} />
       <Cart />
-      <footer className='card bg-black'>
+      {/* <footer className='bg-black'>
         <h2> 
           Fire in the Hole &reg; 
         </h2>
@@ -23,7 +23,7 @@ const Home = () => {
         <h6>&copy; OSU Full Stack Web Development Coding Bootcamp - Project 3</h6>
 
       </div>
-      </footer>
+      </footer> */}
     </div>
     
   );

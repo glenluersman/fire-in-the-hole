@@ -110,72 +110,76 @@ function Detail() {
       [name]: value,
     });
   };
-
+  
   return (
-    <div className='card' id='productInfo'>
-      {currentProduct.ingredients ? (
-        <div>
-          <Link to='/'>Back to Products</Link>
-          <h2>{currentProduct.name}</h2>
-          
-          <p>{currentProduct.description}</p>
-          {currentProduct.ingredients.length ? (
-            <><h3>Ingredients</h3><ul>
-              {currentProduct.ingredients.map(ingredient => (
-                <li key={ingredient}>{ingredient}</li>
-              ))}
-            </ul></>
-          ) : null
-          }
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
-            <button 
-              disabled={!cart.find(p => p._id === currentProduct._id)} 
-              onClick={removeFromCart}
-            >
-              Remove from Cart
-            </button>
-          </p>
-
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
-          
-          <form onSubmit={handleFormSubmit}>
-            <label htmlFor='rating'>Rating</label>
-            <input
-              placeholder='rating of 1-5'
-              name='rating'
-              type='rating'
-              id='rating'
-              onChange={handleChange}
-            />
-            <label htmlFor='reviewText'>Review:</label>
-            <textarea
-              placeholder='type review here'
-              name='reviewText'
-              type='text'
-              id='review'
-              onChange={handleChange}
-            />
-            <button type="submit">Add Review</button>
-          </form>
-          
+    <div className='container d-flex justify-content-center'>
+      <div className='card col-6' id='productInfo'>
+        {currentProduct.ingredients ? (
           <div>
-            <ul style={{ listStyleType: "none" }}>
-              {currentProduct.reviews &&
-                currentProduct.reviews.map(review => (
-                  <li key={review._id}><span>{review.userId.username} says... </span>{review.reviewText}</li>
-                ))
-              }
-            </ul>
+            <Link to='/'>Back to Products</Link>
+            <h2>{currentProduct.name}</h2>
+            
+            <img
+              src={`/images/${currentProduct.image}`}
+              alt={currentProduct.name}
+            />
+
+            <p>{currentProduct.description}</p>
+            {currentProduct.ingredients.length ? (
+              <><h3>Ingredients</h3><ul>
+                {currentProduct.ingredients.map(ingredient => (
+                  <li key={ingredient}>{ingredient}</li>
+                ))}
+              </ul></>
+            ) : null
+            }
+            <p>
+              <strong>Price:</strong>${currentProduct.price}{' '}
+              <br></br>
+              <button onClick={addToCart}>Add to Cart</button>
+              <button 
+                disabled={!cart.find(p => p._id === currentProduct._id)} 
+                onClick={removeFromCart}
+                >
+                Remove from Cart
+              </button>
+            </p>
+
+            
+            <form onSubmit={handleFormSubmit}>
+              <label htmlFor='rating'>Rating:</label>
+              <input
+                placeholder='rating of 1-5'
+                name='rating'
+                type='rating'
+                id='rating'
+                onChange={handleChange}
+              />
+              <label htmlFor='reviewText'>Review:</label>
+              <textarea
+                placeholder='type review here'
+                name='reviewText'
+                type='text'
+                id='review'
+                onChange={handleChange}
+                />
+              <button type="submit">Add Review</button>
+            </form>
+            
+            <div>
+              <ul style={{ listStyleType: "none" }}>
+                {currentProduct.reviews &&
+                  currentProduct.reviews.map(review => (
+                    <li key={review._id}><span>{review.userId.username} says... </span>{review.reviewText}</li>
+                    ))
+                  }
+              </ul>
+            </div>
           </div>
-        </div>
-      ) : null}
-      {loading ? <img src={spinner} alt='loading' /> : null}
-      <Cart />
+        ) : null}
+        {loading ? <img src={spinner} alt='loading' /> : null}
+        <Cart />
+      </div>
     </div>
   );
 }

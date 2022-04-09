@@ -65,14 +65,14 @@ const Cart = () => {
       <div className="cart-closed" onClick={toggleCart}>
         <span
           role="img"
-          aria-label="trash">🛒</span>
+          aria-label="trash">🌶</span>
       </div>
     );
   }
 
   return (
-    <div className="cart" id="shoppingCart">
-      <div className="card" id="shoppingCart">
+    <div className="cart">
+      <div>
       <div className="close" onClick={toggleCart}>[close]</div>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (

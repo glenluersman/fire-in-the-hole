@@ -37,10 +37,12 @@ function CategoryMenu({ setCategory }) {
   };
 
   return (
-    <div className='container bg-danger' id='chooseCategory'>
-      <h2>Choose a Category:</h2>
+    <div className='category'>
+      <div className='cat-title'>
+      <h2>Choose your level of pain:</h2>
+      </div>
       {categories.map((item) => (
-        <button id='categoryButtons'
+        <button className='cat-btn'
           key={item._id}
           onClick={() => {
             handleClick(item._id);

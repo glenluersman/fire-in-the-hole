@@ -31,7 +31,7 @@ function Signup() {
   };
 
   return (
-    <div className='card mx-auto' id='signupCard'>
+    <div className='card mx-auto link'>
       <h2>Signup</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
@@ -64,7 +64,7 @@ function Signup() {
             onChange={handleChange}
           />
           <div>
-            <button type='submit' className='btn btn-danger'>Submit</button>
+            <button type='submit'>Submit</button>
           </div>
         </div>
       </form>
