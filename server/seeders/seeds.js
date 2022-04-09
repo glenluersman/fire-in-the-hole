@@ -9,42 +9,42 @@ db.once('open', async () => {
     {
     username: "alan",
     email: "alan@gmail.com",
-    password: "password"
+    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
     },
     {
     username: "niraj",
     email: "niraj@gmail.com",
-    password: "password"
+    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
     },
     {
     username: "jacob",
     email: "jacob@gmail.com",
-    password: "password"
+    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
     },
     {
     username: "glen",
     email: "glen@gmail.com",
-    password: "password"
+    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
     },
     {
     username: "wendy",
     email: "wendy@gmail.com",
-    password: "password"
+    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
     },
     {
     username: "danielle",
     email: "danielle@gmail.com",
-    password: "password"
+    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
     },
     {
     username: "sarah",
     email: "sarah@gmail.com",
-    password: "password"
+    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
     },
     {
     username: "paige",
     email: "paige@gmail.com",
-    password: "password"
+    password: "$2b$10$GS7R/jHGEWHVx1UWZc2K3OfM6FTJQg8UKDKtakFNUX2.D.DpZbQwq"
     }
   ]);
 

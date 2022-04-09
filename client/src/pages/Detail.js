@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
+import Auth from '../utils/auth';
 
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { ADD_REVIEW } from '../utils/mutations'
-import spinner from '../assets/spinner.gif';
+// import spinner from '../assets/spinner.gif';
 import { useStoreContext } from "../utils/GlobalState";
 import {
   REMOVE_FROM_CART,
@@ -98,6 +99,9 @@ function Detail() {
       await addReview({
         variables: { rating: rating, reviewText: formState.reviewText, productId: currentProduct._id }
       });
+
+      setFormState([]);
+      window.location.reload();
     } catch (e) {
       console.log(e);
     }
@@ -146,7 +150,7 @@ function Detail() {
               </button>
             </p>
 
-            
+            {Auth.loggedIn() ? (
             <form onSubmit={handleFormSubmit}>
               <label htmlFor='rating'>Rating:</label>
               <input
@@ -166,7 +170,7 @@ function Detail() {
                 />
               <button className='form-btn' type="submit">Add Review</button>
             </form>
-            
+            ):null}
             <div>
               <ul style={{ listStyleType: "none" }}>
                 {currentProduct.reviews &&
@@ -178,7 +182,7 @@ function Detail() {
             </div>
           </div>
         ) : null}
-        {loading ? <img src={spinner} alt='loading' /> : null}
+        {/* {loading ? <img src={spinner} alt='loading' /> : null} */}
         <Cart />
       </div>
     </div>
