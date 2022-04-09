@@ -13,7 +13,7 @@ import {
 } from '../utils/actions';
 import Cart from '../components/Cart';
 import { idbPromise } from "../utils/helpers";
-import StarRating from './StarRating';
+import StarRating from '../components/Star Rating/StarRating';
 
 function Detail() {
   const [state, dispatch] = useStoreContext();

@@ -4,7 +4,7 @@ import { pluralize } from '../../utils/helpers';
 import { idbPromise } from "../../utils/helpers";
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
-import StarRating from '../../pages/StarRating';
+import StarRating from '../Star Rating/StarRating';
 
 function ProductItem(item) {
   const { image, name, _id, price, quantity } = item;
