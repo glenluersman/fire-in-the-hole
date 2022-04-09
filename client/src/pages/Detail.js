@@ -113,7 +113,7 @@ function Detail() {
   
   return (
     <div className='container d-flex justify-content-center'>
-      <div className='card col-6 product'>
+      <div className='card col-lg-6 col-md-10 product'>
         {currentProduct.ingredients ? (
           <div>
             <Link to='/'>Back to Products</Link>

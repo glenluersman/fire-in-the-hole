@@ -51,6 +51,12 @@ function CategoryMenu({ setCategory }) {
           {item.name}
         </button>
       ))}
+      <a href={'https://www.heinz.com/products/0000000117'}>
+      <button className='cat-btn'>Medium</button> 
+      </a>
+      <a href={'https://www.aquafina.com/en-US/'}>
+      <button className='cat-btn'>Mild</button> 
+      </a>
       <button className='cat-btn' onClick={() => window.location.reload()}>All Products</button>
     </div>
   );

@@ -1,3 +1,9 @@
+body {
+  background-image: url(./assets/images/peakpx.jpg);
+  background-repeat: repeat;
+  background-size: 100%;
+}
+
 /* Header */
 header a {
   text-decoration: none;
@@ -13,6 +19,7 @@ header h1 {
   font-size: 100px;
   text-align: center;
   padding: 50px;
+  margin-top: 75px;
 }
 
 header h3 {
@@ -20,8 +27,14 @@ header h3 {
   font-size: 25px;
 } 
 
+header nav {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
 /* End of Header */
 
+/* General Styling */
 button {
   border: 1px solid black;
   color: red;
@@ -39,10 +52,8 @@ button:hover {
   color: white;
 }
 
-body {
-  background-image: url(./assets/images/peakpx.jpg);
-  background-repeat: repeat;
-  background-size: 100%;
+li {
+  list-style: none;
 }
 
 a {
@@ -58,13 +69,24 @@ a {
   color: red;
 }
 
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+/* General Styling */
+
+/* Nav Styling */
 .navigation {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
   margin-bottom: 50px;
   color: white;
 }
+/* End Nav Styling */
 
 /* Category Styling */
 .category {
@@ -77,11 +99,13 @@ a {
 }
 
 .cat-btn {
-  opacity: 0.7;
+  opacity: 0.9;
   margin: 10px;
   border-radius: 0.25rem;
 }
+/* End Category Styling */
 
+/* Product Styling */
 .product {
   display: flex;
   flex-wrap: wrap;
@@ -98,13 +122,6 @@ a {
   color: red;
 }
 
-.container {
-  width: 85%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-}
 
 .flex-row {
   display: flex;
@@ -114,7 +131,7 @@ a {
 .card {
   width: 31%;
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.9;
   border: 1px solid gray;
   box-shadow: 1px 1px 3px 3px #b2a9a9;
 }
@@ -131,24 +148,26 @@ a {
   border-radius: 0.25rem;
   box-shadow: 1px 1px 3px 3px #b2a9a9;
 }
+/* End Product Styling */
 
+/* Detail Styling */
 .detail {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+/* End Detail Styling */
 
+/* Success Styling */
 .success {
   color: white;
 }
+/* End Success Styling */
 
+/* Form Styling */
 .form-btn {
   margin: 10px;
   border-radius: 0.25rem;
-}
-
-li {
-  list-style: none;
 }
 
 input {
@@ -165,11 +184,9 @@ textarea {
   width: 90%;
   border-radius: 0.25rem;
 }
+/* End Form Styling */
 
-footer {
-color: white;
-}
-
+/* End Mobile Responsive Styling */
 @media screen and (max-width: 1000px) {
   .card img {
     width: 150px;
@@ -191,5 +208,5 @@ color: white;
     width: 45%;
   }
 }
-
+/* End Mobile Responsive Styling */
 

@@ -14,8 +14,7 @@ function Nav() {
     } else {
       return (
         <div className='navigation'>
-          <h3><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></h3> 
-          <h3></h3> 
+          <h3><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></h3>
           <h3><Link to='/signup'>Signup</Link></h3>      
         </div>
       );
