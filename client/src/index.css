@@ -78,11 +78,8 @@ a {
 
 .cat-btn {
   opacity: 0.7;
-}
-
-#orderHistory {
-  max-width: fit-content;
-  padding: 25px;
+  margin: 10px;
+  border-radius: 0.25rem;
 }
 
 .product {
@@ -114,14 +111,6 @@ a {
   flex-wrap: wrap;
 }
 
-.space-between {
-  justify-content: space-between;
-}
-
-.flex-end {
-  justify-content: flex-end;
-}
-
 .card {
   width: 31%;
   text-align: center;
@@ -132,13 +121,14 @@ a {
 
 .card img {
   width: auto;
-  margin: 5px;
+  margin: 10px;
   border: 1px solid gray;
   box-shadow: 1px 1px 3px 3px #b2a9a9;
 }
 
 .shadow {
   border: 1px solid gray;
+  border-radius: 0.25rem;
   box-shadow: 1px 1px 3px 3px #b2a9a9;
 }
 
@@ -154,6 +144,7 @@ a {
 
 .form-btn {
   margin: 10px;
+  border-radius: 0.25rem;
 }
 
 li {
@@ -162,6 +153,7 @@ li {
 
 input {
   width: 90%;
+  border-radius: 0.25rem;
 }
 
 label {
@@ -171,6 +163,7 @@ label {
 
 textarea {
   width: 90%;
+  border-radius: 0.25rem;
 }
 
 footer {

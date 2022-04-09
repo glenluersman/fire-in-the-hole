@@ -25,7 +25,7 @@ function Nav() {
   return (
       <header>
         <h1>
-          <Link to='/' onClick={() => window.location.reload()}>Fire In The Hole</Link>
+          <Link to='/'>Fire In The Hole</Link>
         </h1>
         <nav>{showNavigation()}</nav>
       </header>
