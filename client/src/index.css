@@ -7,11 +7,12 @@ body {
 /* Header */
 header a {
   text-decoration: none;
+  opacity: 0.9;
   color: white;
 }
 
 header a:hover {
-  color: red;
+  color: #FC4A03;
 }
 
 header h1 {
@@ -20,6 +21,14 @@ header h1 {
   text-align: center;
   padding: 50px;
   margin-top: 75px;
+}
+
+header h3 {
+  font-size: 30px !important;
+}
+
+.title {
+  color: #FC4A03;
 }
 
 header h3 {
@@ -37,7 +46,8 @@ header nav {
 /* General Styling */
 button {
   border: 1px solid black;
-  color: red;
+  background-color: #FC4A03;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -48,8 +58,8 @@ button {
 }
 
 button:hover {
-  background-color: red;
-  color: white;
+  background-color: white;
+  color: #FC4A03;
 }
 
 li {
@@ -66,7 +76,7 @@ a {
 }
 
 .link a:hover {
-  color: red;
+  color: #FC4A03;
 }
 
 .container {
@@ -96,6 +106,7 @@ a {
 
 .cat-title {
   color: white;
+  opacity: 0.9;
 }
 
 .cat-btn {
@@ -119,7 +130,7 @@ a {
 }
 
 .product a:hover {
-  color: red;
+  color: #FC4A03;
 }
 
 
