@@ -30,7 +30,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 2px;
+  margin: 5px;
   transition-duration: 0.4s;
 }
 
@@ -43,6 +43,10 @@ body {
   background-image: url(./assets/images/peakpx.jpg);
   background-repeat: repeat;
   background-size: 100%;
+}
+
+a {
+  text-decoration: none;
 }
 
 .link a {
@@ -81,11 +85,20 @@ body {
   padding: 25px;
 }
 
-#productInfo {
+.product {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
   margin: 5px;
+}
+
+.product a {
+  text-decoration: none;
+  color: black;
+}
+
+.product a:hover {
+  color: red;
 }
 
 .container {
@@ -93,6 +106,7 @@ body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
 }
 
 .flex-row {
@@ -136,6 +150,10 @@ body {
 
 .success {
   color: white;
+}
+
+.form-btn {
+  margin: 10px;
 }
 
 li {

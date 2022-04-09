@@ -34,7 +34,7 @@ function ProductItem(item) {
   }
 
   return (
-    <div className='card' id='productInfo'>
+    <div className='card product'>
       <Link to={`/products/${_id}`}>
         <img alt={name} src={`/images/${image}`} />
         <p>{name}</p>

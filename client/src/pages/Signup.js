@@ -64,7 +64,7 @@ function Signup() {
             onChange={handleChange}
           />
           <div>
-            <button type='submit'>Submit</button>
+            <button className='form-btn' type='submit'>Submit</button>
           </div>
         </div>
       </form>

@@ -16,7 +16,7 @@ function Nav() {
         <div className='navigation'>
           <h3><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></h3> 
           <h3></h3> 
-          <h3><Link to='/signup'>Signup Here</Link></h3>      
+          <h3><Link to='/signup'>Signup</Link></h3>      
         </div>
       );
     }
@@ -25,7 +25,7 @@ function Nav() {
   return (
       <header>
         <h1>
-          <Link to='/'>Fire In The Hole</Link>
+          <Link to='/' onClick={() => window.location.reload()}>Fire In The Hole</Link>
         </h1>
         <nav>{showNavigation()}</nav>
       </header>

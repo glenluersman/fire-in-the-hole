@@ -113,7 +113,7 @@ function Detail() {
   
   return (
     <div className='container d-flex justify-content-center'>
-      <div className='card col-6' id='productInfo'>
+      <div className='card col-6 product'>
         {currentProduct.ingredients ? (
           <div>
             <Link to='/'>Back to Products</Link>
@@ -136,8 +136,9 @@ function Detail() {
             <p>
               <strong>Price:</strong>${currentProduct.price}{' '}
               <br></br>
-              <button onClick={addToCart}>Add to Cart</button>
-              <button 
+              <button className='form-btn' onClick={addToCart}>Add to Cart</button>
+              <button
+                className='form-btn' 
                 disabled={!cart.find(p => p._id === currentProduct._id)} 
                 onClick={removeFromCart}
                 >
@@ -163,7 +164,7 @@ function Detail() {
                 id='review'
                 onChange={handleChange}
                 />
-              <button type="submit">Add Review</button>
+              <button className='form-btn' type="submit">Add Review</button>
             </form>
             
             <div>

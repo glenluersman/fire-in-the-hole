@@ -14,10 +14,10 @@ function OrderHistory() {
 
   return (
     <>
-      <div>
+      <div className='container'>
 
         {user ? (
-          <div className='card mx-auto' id='orderHistory'>
+          <div className='card mx-auto product'>
             <h2>
               Order History for {user.username}              
             </h2>
