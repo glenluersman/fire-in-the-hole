@@ -51,6 +51,7 @@ function CategoryMenu({ setCategory }) {
           {item.name}
         </button>
       ))}
+      <button className='cat-btn' onClick={() => window.location.reload()}>All Products</button>
     </div>
   );
 }
