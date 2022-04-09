@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
+import Auth from '../utils/auth';
 
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { ADD_REVIEW } from '../utils/mutations'
-import spinner from '../assets/spinner.gif';
+// import spinner from '../assets/spinner.gif';
 import { useStoreContext } from "../utils/GlobalState";
 import {
   REMOVE_FROM_CART,
@@ -20,7 +21,7 @@ function Detail() {
   const { id } = useParams();
 
   const [formState, setFormState] = useState('');
-
+  
   const [addReview] = useMutation(ADD_REVIEW);
 
   const [currentProduct, setCurrentProduct] = useState({});
@@ -98,6 +99,9 @@ function Detail() {
       await addReview({
         variables: { rating: rating, reviewText: formState.reviewText, productId: currentProduct._id }
       });
+      
+      setFormState({});
+      refreshPage();
     } catch (e) {
       console.log(e);
     }
@@ -109,6 +113,10 @@ function Detail() {
       ...formState,
       [name]: value,
     });
+  };
+
+  function refreshPage() {
+    window.location.reload(false);
   };
 
   return (
@@ -143,27 +151,29 @@ function Detail() {
             alt={currentProduct.name}
           />
           
-          <form onSubmit={handleFormSubmit}>
-            <label htmlFor='rating'>Rating</label>
-            <input
-              placeholder='rating of 1-5'
-              name='rating'
-              type='rating'
-              id='rating'
-              onChange={handleChange}
-            />
-            <label htmlFor='reviewText'>Review:</label>
-            <textarea
-              placeholder='type review here'
-              name='reviewText'
-              type='text'
-              id='review'
-              onChange={handleChange}
-            />
-            <button type="submit">Add Review</button>
-          </form>
+          {Auth.loggedIn() ? (
+            <form onSubmit={handleFormSubmit}>
+              <label htmlFor='rating'>Rating</label>
+              <input
+                placeholder='rating of 1-5'
+                name='rating'
+                type='rating'
+                id='rating'
+                onChange={handleChange}
+              />
+              <label htmlFor='reviewText'>Review:</label>
+              <textarea
+                placeholder='type review here'
+                name='reviewText'
+                type='text'
+                id='review'
+                onChange={handleChange}
+              />
+              <button type="submit">Add Review</button>
+            </form>) : null
+          }
           
-          <div>
+          {<div>
             <ul style={{ listStyleType: "none" }}>
               {currentProduct.reviews &&
                 currentProduct.reviews.map(review => (
@@ -171,10 +181,10 @@ function Detail() {
                 ))
               }
             </ul>
-          </div>
+          </div>}
         </div>
       ) : null}
-      {loading ? <img src={spinner} alt='loading' /> : null}
+      {/* {loading ? <img src={spinner} alt='loading' /> : null} */}
       <Cart />
     </div>
   );
