@@ -15,7 +15,7 @@ export default function Stars(args) {
     const rating = ttl / reviews.reviews.length;
   
     return (
-      <div className='App'>
+      <div className='App star'>
         <Rating
           ratingValue={rating}
           readonly={true}
