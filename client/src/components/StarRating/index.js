@@ -19,7 +19,7 @@ export default function Stars(args) {
         <Rating
           ratingValue={rating}
           readonly={true}
-          fillColor={"#FC4A03"}
+          fillColor={"#FF0000"}
           fullIcon={<FaPepperHot size={30} />}
           emptyIcon={<FaPepperHot size={30} />}
         />

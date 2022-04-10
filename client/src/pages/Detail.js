@@ -162,7 +162,7 @@ function Detail() {
                   <Rating
                     onClick={handleRating}
                     ratingValue={rating}
-                    fillColor={"#FC4A03"}
+                    fillColor={"#FF0000"}
                     fullIcon={<FaPepperHot size={30} />}
                     emptyIcon={<FaPepperHot size={30} />}
                 />
