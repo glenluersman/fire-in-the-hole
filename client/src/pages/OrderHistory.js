@@ -17,7 +17,7 @@ function OrderHistory() {
       <div className='container'>
 
         {user ? (
-          <div className='card mx-auto product'>
+          <div className='card mx-auto product col-lg-6 col-md-8 col-12'>
             <h2>
               Order History for {user.username}              
             </h2>

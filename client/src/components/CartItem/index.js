@@ -36,7 +36,7 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <div className="container flex-row">
+    <div className="container">
       <div>
         <img
           src={`/images/${item.image}`}
