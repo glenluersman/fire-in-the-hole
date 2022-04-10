@@ -122,14 +122,30 @@ a {
   flex-wrap: wrap;
   padding: 20px;
   margin: 5px;
+  width: 31%;
+  text-align: center;
+  opacity: 0.9;
+  border: 1px solid gray;
+  box-shadow: 1px 1px 3px 3px #b2a9a9;
 }
 
-.product a {
+.product2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 5px;
+  text-align: center;
+  opacity: 0.9;
+  border: 1px solid gray;
+  box-shadow: 1px 1px 3px 3px #b2a9a9;
+}
+
+.card a {
   text-decoration: none;
   color: black;
 }
 
-.product a:hover {
+.card a:hover {
   color: #FC4A03;
 }
 
@@ -137,14 +153,11 @@ a {
 .flex-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
-  width: 31%;
-  text-align: center;
-  opacity: 0.9;
-  border: 1px solid gray;
-  box-shadow: 1px 1px 3px 3px #b2a9a9;
+  
 }
 
 .card img {
