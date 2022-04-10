@@ -52,42 +52,42 @@ db.once('open', async () => {
 
   const review = await Review.insertMany([
     {
-      rating: 4,
+      rating: 80,
       reviewText: "Damn good!",
       userId: user[0]._id
     },
     {
-      rating: 5,
+      rating: 100,
       reviewText: "Fantastic",
       userId: user[1]._id
     },
     {
-      rating: 3,
+      rating: 60,
       reviewText: "I've hade better",
       userId: user[2]._id
     },
     {
-      rating: 3,
+      rating: 60,
       reviewText: "It's ok",
       userId: user[3]._id
     },
     {
-      rating: 4,
+      rating: 80,
       reviewText: "Good flavor",
       userId: user[4]._id
     },
     {
-      rating: 1,
+      rating: 20,
       reviewText: "Worst hot sauce ever!",
       userId: user[5]._id
     },
     {
-      rating: 5,
+      rating: 100,
       reviewText: "My mouth is still on fire",
       userId: user[6]._id
     },
     {
-      rating: 4,
+      rating: 80,
       reviewText: "Very hot",
       userId: user[7]._id
     }
