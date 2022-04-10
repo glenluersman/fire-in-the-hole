@@ -16,7 +16,7 @@ header a:hover {
 }
 
 header h1 {
-  font-family: Luminari, fantasy;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
   font-size: 100px;
   text-align: center;
   padding: 50px;
@@ -32,7 +32,7 @@ header h3 {
 }
 
 header h3 {
-  font-family: fantasy;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 25px;
 } 
 
@@ -197,7 +197,7 @@ textarea {
 }
 /* End Form Styling */
 
-/* End Mobile Responsive Styling */
+/* Mobile Responsive Styling */
 @media screen and (max-width: 1000px) {
   .card img {
     width: 150px;
@@ -210,13 +210,14 @@ textarea {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
   .card img {
     width: 100px;
   }
 
   .card {
-    width: 45%;
+    width: 95%;
+    margin-bottom: 50px;
   }
 }
 /* End Mobile Responsive Styling */
