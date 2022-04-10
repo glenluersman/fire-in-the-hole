@@ -63,7 +63,7 @@
     .cart {
         position: fixed;
         max-width: 90%;
-        max-height: auto;
+        max-height: 35%;
         box-shadow: none;
         background-color: white;
     }

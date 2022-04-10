@@ -31,11 +31,11 @@ function Login(props) {
   };
 
   return (
-    <div className='card mx-auto link'>
+    <div className='card mx-auto col-10 col-lg-6 link'>
       <h2>Login</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
-          <label htmlFor='email'>Email address:</label>
+          <label htmlFor='email'>Email Address:</label>
           <input
             placeholder='youremail@test.com'
             name='email'

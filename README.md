@@ -1,5 +1,5 @@
 <p align="center">
- <img width=300px height=200px src="./client/public/images/Pepper-Banner.jpeg" alt="Project logo"></a>
+ <img width=300px height=200px src="./client/public/images/fire-pepper.jpg" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Fire In The Hole</h3>
@@ -31,7 +31,7 @@
 
 ## <img id="usage" src="https://github.com/teamjuli0/readme-badges/blob/main/themes/clean-dark/menu-categories/usage.png?raw=true" style="height: 40px">
 
-- Deployed at Heroku: 
+- Deployed at Heroku: https://murmuring-lake-91341.herokuapp.com/
 
 - 
 
