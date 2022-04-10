@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 
 import { QUERY_PRODUCTS } from '../utils/queries';
+import { ADD_REVIEW } from '../utils/mutations'
 import spinner from '../assets/spinner.gif';
 import { useStoreContext } from "../utils/GlobalState";
 import {
@@ -18,11 +19,16 @@ function Detail() {
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
 
+  const [formState, setFormState] = useState('');
+
+  const [addReview] = useMutation(ADD_REVIEW);
+
   const [currentProduct, setCurrentProduct] = useState({});
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
   const { products, cart } = state;
+  
   
   useEffect(() => {
     // already in global store
@@ -85,32 +91,96 @@ function Detail() {
     idbPromise('cart', 'delete', { ...currentProduct });
   };
 
-  return (
-    <div className='card' id='productInfo'>
-      {currentProduct ? (
-        <div>
-          <Link to='/'>Back to Products</Link>
-          <h2>{currentProduct.name}</h2>
-          <p>{currentProduct.description}</p>
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
-            <button 
-              disabled={!cart.find(p => p._id === currentProduct._id)} 
-              onClick={removeFromCart}
-            >
-              Remove from Cart
-            </button>
-          </p>
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const rating = parseInt(formState.rating);
+      await addReview({
+        variables: { rating: rating, reviewText: formState.reviewText, productId: currentProduct._id }
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
-        </div>
-      ) : null}
-      {loading ? <img src={spinner} alt='loading' /> : null}
-      <Cart />
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+  
+  return (
+    <div className='container d-flex justify-content-center'>
+      <div className='card col-lg-6 col-md-10 product'>
+        {currentProduct.ingredients ? (
+          <div>
+            <Link to='/'>Back to Products</Link>
+            <h2>{currentProduct.name}</h2>
+            
+            <img
+              src={`/images/${currentProduct.image}`}
+              alt={currentProduct.name}
+            />
+
+            <p>{currentProduct.description}</p>
+            {currentProduct.ingredients.length ? (
+              <><h3>Ingredients</h3><ul>
+                {currentProduct.ingredients.map(ingredient => (
+                  <li key={ingredient}>{ingredient}</li>
+                ))}
+              </ul></>
+            ) : null
+            }
+            <p>
+              <strong>Price:</strong>${currentProduct.price}{' '}
+              <br></br>
+              <button className='form-btn' onClick={addToCart}>Add to Cart</button>
+              <button
+                className='form-btn' 
+                disabled={!cart.find(p => p._id === currentProduct._id)} 
+                onClick={removeFromCart}
+                >
+                Remove from Cart
+              </button>
+            </p>
+
+            
+            <form onSubmit={handleFormSubmit}>
+              <label htmlFor='rating'>Rating:</label>
+              <input
+                placeholder='rating of 1-5'
+                name='rating'
+                type='rating'
+                id='rating'
+                onChange={handleChange}
+              />
+              <label htmlFor='reviewText'>Review:</label>
+              <textarea
+                placeholder='type review here'
+                name='reviewText'
+                type='text'
+                id='review'
+                onChange={handleChange}
+                />
+              <button className='form-btn' type="submit">Add Review</button>
+            </form>
+            
+            <div>
+              <ul style={{ listStyleType: "none" }}>
+                {currentProduct.reviews &&
+                  currentProduct.reviews.map(review => (
+                    <li key={review._id}><span>{review.userId.username} says... </span>{review.reviewText}</li>
+                    ))
+                  }
+              </ul>
+            </div>
+          </div>
+        ) : null}
+        {loading ? <img src={spinner} alt='loading' /> : null}
+        <Cart />
+      </div>
     </div>
   );
 }

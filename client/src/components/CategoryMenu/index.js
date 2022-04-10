@@ -37,10 +37,12 @@ function CategoryMenu({ setCategory }) {
   };
 
   return (
-    <div className='container bg-danger' id='chooseCategory'>
-      <h2>Choose a Category:</h2>
+    <div className='category'>
+      <div className='cat-title'>
+      <h2>Choose your level of pain:</h2>
+      </div>
       {categories.map((item) => (
-        <button id='categoryButtons'
+        <button className='cat-btn'
           key={item._id}
           onClick={() => {
             handleClick(item._id);
@@ -49,6 +51,13 @@ function CategoryMenu({ setCategory }) {
           {item.name}
         </button>
       ))}
+      <a href={'https://www.heinz.com/products/0000000117'}>
+      <button className='cat-btn'>Medium</button> 
+      </a>
+      <a href={'https://www.aquafina.com/en-US/'}>
+      <button className='cat-btn'>Mild</button> 
+      </a>
+      <button className='cat-btn' onClick={() => window.location.reload()}>All Products</button>
     </div>
   );
 }

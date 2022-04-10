@@ -34,7 +34,7 @@ function ProductItem(item) {
   }
 
   return (
-    <div className='card' id='productInfo'>
+    <div className='card product'>
       <Link to={`/products/${_id}`}>
         <img alt={name} src={`/images/${image}`} />
         <p>{name}</p>
@@ -45,7 +45,7 @@ function ProductItem(item) {
         </div>
         <span>${price}</span>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <button className='shadow' onClick={addToCart}>Add to cart</button>
     </div>
   );
 }
