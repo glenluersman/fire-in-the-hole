@@ -4,9 +4,10 @@ import { pluralize } from '../../utils/helpers';
 import { idbPromise } from "../../utils/helpers";
 import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
+import Stars from '../../components/StarRating';
 
 function ProductItem(item) {
-  const { image, name, _id, price, quantity } = item;
+  const { image, name, _id, price, quantity, reviews } = item;
 
   const [state, dispatch] = useStoreContext();
 
@@ -39,6 +40,7 @@ function ProductItem(item) {
         <img alt={name} src={`/images/${image}`} />
         <p>{name}</p>
       </Link>
+      <div><Stars reviews={reviews} /></div>
       <div>
         <div>
           {quantity} {pluralize('item', quantity)} in stock

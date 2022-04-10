@@ -31,7 +31,7 @@ function Signup() {
   };
 
   return (
-    <div className='card mx-auto link'>
+    <div className='card mx-auto col-10 col-lg-6 link'>
       <h2>Signup</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
@@ -45,7 +45,7 @@ function Signup() {
           />
         </div>        
         <div>
-          <label htmlFor='email'>Email:</label>
+          <label htmlFor='email'>Email Address:</label>
           <input
             placeholder='email'
             name='email'
