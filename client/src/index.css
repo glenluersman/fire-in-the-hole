@@ -188,7 +188,7 @@ input {
 
 label {
   float: left;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 textarea {
@@ -208,6 +208,11 @@ textarea {
   .card img {
     width: 100px;
   }
+
+  /* .card {
+    width: 95%;
+    margin-bottom: 50px;
+  } */
 }
 
 @media screen and (max-width: 550px) {
