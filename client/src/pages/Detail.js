@@ -150,7 +150,7 @@ function Detail() {
             <form onSubmit={handleFormSubmit}>
               <label htmlFor='rating'>Rating:</label>
               <input
-                placeholder='rating of 1-5'
+                placeholder='rating of 1-100'
                 name='rating'
                 type='rating'
                 id='rating'

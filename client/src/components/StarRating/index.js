@@ -1,5 +1,6 @@
 import React from 'react';
 import { Rating } from 'react-simple-star-rating';
+import { FaPepperHot } from 'react-icons/fa';
  
 export default function Stars(args) {
 
@@ -15,7 +16,13 @@ export default function Stars(args) {
   
     return (
       <div className='App'>
-        <Rating ratingValue={rating} readonly={true} />
+        <Rating
+          ratingValue={rating}
+          readonly={true}
+          fillColor={"#FC4A03"}
+          fullIcon={<FaPepperHot size={30} />}
+          emptyIcon={<FaPepperHot size={30} />}
+        />
       </div>
     )
 };
