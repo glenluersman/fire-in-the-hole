@@ -3,17 +3,16 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type User {
         _id: ID
-        username: String!
-        email: String!
-        reviews: [Review]
+        username: String
+        email: String
         orders: [Order]
     }
     
     type Product {
         _id: ID
-        name: String!
-        price: Float!
-        description: String!
+        name: String
+        price: Float
+        description: String
         ingredients: [String]
         reviews: [Review]
         image: String
@@ -29,8 +28,9 @@ const typeDefs = gql`
 
     type Review {
         _id: ID
-        rating: Int!
+        rating: Int
         reviewText: String
+        userId: User
     }
 
     type Category {
@@ -43,23 +43,26 @@ const typeDefs = gql`
         user: User
     }
 
+    type Checkout {
+      session: ID
+    }
+
     type Query {
-        users: [User]
-        user(_id: String!): User
+        user: User
         products(category: ID, name: String): [Product]
-        product(_id: String!): Product
-        order(userId: ID!, orderId: ID!): Order
+        product(_id: String): Product
+        order(userId: ID): Order
         categories: [Category]
+        checkout(products: [ID]): Checkout
     }
 
     type Mutation {
-        login(email: String!, password: String!): Auth
-        addUser(username: String!, email: String!, password: String!): Auth
-        addProduct(name: String!, price: Float!, description: String!, ingredients: [String], image: String, quantity: Int): Product
-        addReview(rating: Int!, reviewText: String, userId: ID, productID: ID): Review
-        addOrder(_id: ID!, products: [ID]!): Order
-        updateProduct(_id: ID!, quantity: Int!): Product
-        updateUser(username: String, email: String, password: String): User
+        login(email: String, password: String): Auth
+        addUser(username: String, email: String, password: String): Auth
+        addReview(rating: Int, reviewText: String, userId: ID, productId: ID): Review
+        updateUser(firstName: String, lastName: String, email: String, password: String): User
+        updateProduct(_id: ID, quantity: Int): Product
+        addOrder(products: [ID]): Order
     }
 
 `;

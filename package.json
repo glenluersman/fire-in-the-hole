@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "yarn": "^1.22.18"
   },
   "name": "hot-sauce",
   "description": "Final Project",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js",

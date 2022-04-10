@@ -21,12 +21,6 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    reviews: [
-      {
-      type: Schema.Types.ObjectId,
-      ref: 'Review'
-      }
-    ],
     orders: [Order.schema]
   },
   {
@@ -50,10 +44,6 @@ userSchema.pre('save', async function(next) {
 userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
-
-userSchema.virtual('reviewCount').get(function() {
-  return this.reviews.length;
-});
 
 userSchema.virtual('orderCount').get(function() {
   return this.orders.length;

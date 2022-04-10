@@ -18,9 +18,12 @@ export const ADD_ORDER = gql`
       products {
         _id
         name
-        price
         description
+        price
         quantity
+        category {
+          name
+        }
       }
     }
   }
@@ -45,50 +48,15 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_PRODUCT = gql`
-  mutation addProduct(
-    $name: String!
-    $price: Float!
-    $description: String!
-    $ingredients: [String]
-    $image: String
-    $quantity: Int
-  ) {
-    addProduct(
-      name: $name
-      price: $price
-      description: $description
-      ingredients: $ingredients
-      image: $image
-      quantity: $quantity
-    ) {
-      name
-      price
-      description
-      ingredients
-      image
-      quantity
-    }
-  }
-`;
-
 export const ADD_REVIEW = gql`
-  mutation addReview(
-    $rating: Int!
-    $reviewText: String
-    $userId: ID
-    $productID: ID
-  ) {
-    addReview(
-      rating: $rating
-      reviewText: $reviewText
-      userId: $userId
-      productID: $productID
-    ) {
-      token
-      user {
-        _id
-      }
+mutation AddReview($rating: Int!, $reviewText: String, $userId: ID, $productId: ID) {
+  addReview(rating: $rating, reviewText: $reviewText, userId: $userId, productId: $productId) {
+    _id
+    rating
+    reviewText
+    userId {
+      _id  
     }
   }
+}
 `;

@@ -6,39 +6,29 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul>
-          <li>
-            <Link to='/orderHistory'>Order History</Link>
-          </li>
-          <li>
-            <a href='/' onClick={() => Auth.logout()}>
-              Logout
-            </a>
-          </li>
-        </ul>
+          <div className='navigation'>
+              <h3><Link to='/orderHistory'>Order History</Link></h3>
+              <h3><a href='/' onClick={() => Auth.logout()}>Logout</a></h3>
+          </div>
       );
     } else {
       return (
-        <ul>
-          <li>
-            <Link to='/signup'>Signup</Link>
-          </li>
-          <li>
-            <Link to='/login'>Login</Link>
-          </li>
-        </ul>
+        <div className='navigation'>
+          <h3><Link to='/login' style={{ textDecoration: 'none' }}>Login</Link></h3>
+          <h3><Link to='/signup'>Signup</Link></h3>      
+        </div>
       );
     }
   }
 
   return (
-    <header>
-      <h1>
-        <Link to='/'>Fir In The Hole</Link>
-      </h1>
-      <nav>{showNavigation()}</nav>
-    </header>
-  );
+      <header>
+        <h1>
+          <Link className='title' to='/'>Fire In The Hole</Link>
+        </h1>
+        <nav>{showNavigation()}</nav>
+      </header>
+  ); 
 }
 
 export default Nav;

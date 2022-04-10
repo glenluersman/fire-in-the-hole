@@ -11,13 +11,13 @@ function OrderHistory() {
     user = data.user;
   }
 
+
   return (
     <>
-      <div>
-        <Link to='/'>Back to Products</Link>
+      <div className='container'>
 
         {user ? (
-          <>
+          <div className='card mx-auto product'>
             <h2>
               Order History for {user.username}              
             </h2>
@@ -43,7 +43,8 @@ function OrderHistory() {
                 </div>
               </div>
             ))}
-          </>
+                    <Link to='/'>Back to Products</Link>
+          </div>
         ) : null}
       </div>
     </>
