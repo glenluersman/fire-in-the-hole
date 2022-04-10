@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
-
+import Stars from '../components/StarRating';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { ADD_REVIEW } from '../utils/mutations'
 import spinner from '../assets/spinner.gif';
@@ -123,7 +123,7 @@ function Detail() {
               src={`/images/${currentProduct.image}`}
               alt={currentProduct.name}
             />
-
+            <div><Stars reviews={currentProduct.reviews} /></div>
             <p>{currentProduct.description}</p>
             {currentProduct.ingredients.length ? (
               <><h3>Ingredients</h3><ul>
