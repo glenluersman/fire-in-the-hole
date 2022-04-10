@@ -208,11 +208,6 @@ textarea {
   .card img {
     width: 100px;
   }
-
-  /* .card {
-    width: 95%;
-    margin-bottom: 50px;
-  } */
 }
 
 @media screen and (max-width: 550px) {
