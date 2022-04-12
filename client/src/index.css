@@ -135,7 +135,7 @@ a {
   box-shadow: 1px 1px 3px 3px #b2a9a9;
 }
 
-.width-31 {
+.width {
   width: 31%;
 }
 
@@ -231,6 +231,10 @@ textarea {
 
   .card {
     margin-bottom: 50px;
+  }
+
+  .width {
+    width: 100%;
   }
 }
 /* End Mobile Responsive Styling */

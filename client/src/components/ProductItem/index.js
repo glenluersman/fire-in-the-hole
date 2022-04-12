@@ -35,7 +35,7 @@ function ProductItem(item) {
   }
 
   return (
-    <div className='card product width-31'>
+    <div className='card product width'>
       <Link to={`/products/${_id}`}>
         <img alt={name} src={`/images/${image}`} />
         <p>{name}</p>
