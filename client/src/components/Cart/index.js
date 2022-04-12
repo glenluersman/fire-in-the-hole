@@ -8,6 +8,7 @@ import { idbPromise } from "../../utils/helpers";
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
@@ -80,7 +81,7 @@ const Cart = () => {
           {state.cart.map(item => (
             <CartItem key={item._id} item={item} />
           ))}
-          <div className="flex-row space-between">
+          <div className="flex-row space-between cart-link">
             <strong>Total: ${calculateTotal()}</strong>
             {
               Auth.loggedIn() ?
@@ -88,7 +89,7 @@ const Cart = () => {
                   Checkout
                 </button>
                 :
-                <span>(log in to check out)</span>
+                <span><Link to='/Login'> (Login to checkout)</Link></span>
             }
           </div>
         </div>
