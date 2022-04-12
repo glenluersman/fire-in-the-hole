@@ -89,7 +89,7 @@ const Cart = () => {
                   Checkout
                 </button>
                 :
-                <span><Link to='/Login'>Login to checkout</Link></span>
+                <span><Link to='/Login'>  (Login to checkout)</Link></span>
             }
           </div>
         </div>
