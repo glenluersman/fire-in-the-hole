@@ -14,6 +14,15 @@
     border-bottom-left-radius: .5rem;
 }
 
+.cart-link a {
+  text-decoration: none;
+  color: black;
+}
+
+.cart-link a:hover {
+    color: #FC4A03;
+}
+
 .item {
     left: 0 !important;
 }
