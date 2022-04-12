@@ -181,6 +181,10 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
+.list {
+  padding: 0;
+}
 /* End Detail Styling */
 
 /* Success Styling */
