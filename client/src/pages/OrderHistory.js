@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
+import Cart from '../components/Cart';
 
 function OrderHistory() {
   const { data } = useQuery(QUERY_USER);
@@ -18,6 +19,7 @@ function OrderHistory() {
 
         {user ? (
           <div className='card mx-auto product col-lg-6 col-md-8 col-12'>
+          <Link to='/'>Back to Products</Link>
             <h2>
               Order History for {user.username}              
             </h2>
@@ -43,9 +45,9 @@ function OrderHistory() {
                 </div>
               </div>
             ))}
-                    <Link to='/'>Back to Products</Link>
           </div>
         ) : null}
+        <Cart />
       </div>
     </>
   );
