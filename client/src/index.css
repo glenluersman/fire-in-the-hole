@@ -16,7 +16,7 @@ header a:hover {
 }
 
 header h1 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 100px;
   text-align: center;
   padding: 50px;
@@ -34,13 +34,14 @@ header h3 {
 header h3 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 25px;
-} 
+}
 
 header nav {
   position: absolute;
   top: 20px;
   left: 20px;
 }
+
 /* End of Header */
 
 /* General Styling */
@@ -60,6 +61,10 @@ button {
 button:hover {
   background-color: white;
   color: #FC4A03;
+}
+
+ul {
+  padding-left: 0rem !important;
 }
 
 li {
@@ -103,6 +108,7 @@ a {
   margin-bottom: 50px;
   color: white;
 }
+
 /* End Nav Styling */
 
 /* Category Styling */
@@ -121,6 +127,7 @@ a {
   margin: 10px;
   border-radius: 0.25rem;
 }
+
 /* End Category Styling */
 
 /* Product Styling */
@@ -173,6 +180,7 @@ a {
   border-radius: 0.25rem;
   box-shadow: 1px 1px 3px 3px #b2a9a9;
 }
+
 /* End Product Styling */
 
 /* Detail Styling */
@@ -182,15 +190,13 @@ a {
   margin-right: auto;
 }
 
-.list {
-  padding: 0;
-}
 /* End Detail Styling */
 
 /* Success Styling */
 .success {
   color: white;
 }
+
 /* End Success Styling */
 
 /* Form Styling */
@@ -213,6 +219,7 @@ textarea {
   width: 90%;
   border-radius: 0.25rem;
 }
+
 /* End Form Styling */
 
 /* Mobile Responsive Styling */
@@ -241,5 +248,5 @@ textarea {
     width: 100%;
   }
 }
-/* End Mobile Responsive Styling */
 
+/* End Mobile Responsive Styling */
