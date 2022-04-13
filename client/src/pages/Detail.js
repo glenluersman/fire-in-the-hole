@@ -136,7 +136,7 @@ function Detail() {
             <p>{currentProduct.description}</p>
             {currentProduct.ingredients.length ? (
               <><h3>Ingredients</h3>
-              <ul>
+              <ul className='list'>
                 {currentProduct.ingredients.map(ingredient => (
                   <li key={ingredient}>{ingredient}</li>
                 ))}
