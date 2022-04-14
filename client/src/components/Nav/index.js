@@ -24,7 +24,7 @@ function Nav() {
   return (
       <header>
         <h1>
-          <Link className='title' to='/'>Fire In The Hole</Link>
+          <Link className='title' to='/'>Mouth On Fire</Link>
         </h1>
         <nav>{showNavigation()}</nav>
       </header>
