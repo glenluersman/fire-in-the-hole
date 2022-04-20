@@ -2,13 +2,13 @@
  <img width=300px height=200px src="./client/public/images/fire-pepper.jpg" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Mouth On Fire</h3>
+<h3 align="center">Fire In The Hole</h3>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/glenluersman/mouth-on-fire.svg)](https://github.com/glenluersman/mouth-on-fire/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/glenluersman/mouth-on-fire.svg)](https://github.com/glenluersman/mouth-on-fire/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/glenluersman/fire-in-the-hole.svg)](https://github.com/glenluersman/fire-in-the-hole/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/glenluersman/fire-in-the-hole.svg)](https://github.com/glenluersman/fire-in-the-hole/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
@@ -27,7 +27,7 @@
 
 ## <img id="about" src="https://github.com/teamjuli0/readme-badges/blob/main/themes/clean-dark/menu-categories/about.png?raw=true" style="height: 40px">
 
-- Mouth On Fire is an E-commerce website that sells hot sauce of varying heat index.
+- Fire In The Hole is an E-commerce website that sells hot sauce of varying heat index.
 
 ## <img id="usage" src="https://github.com/teamjuli0/readme-badges/blob/main/themes/clean-dark/menu-categories/usage.png?raw=true" style="height: 40px">
 
@@ -64,10 +64,10 @@
 
 ## <img id="screenshots" src="https://github.com/teamjuli0/readme-badges/blob/main/themes/clean-dark/menu-categories/screenshots.png?raw=true" style="height: 40px">
 
-<img style="margin: 0 0 15px 0" src="./client/public/images/mouth1.PNG" ></a>
+<img style="margin: 0 0 15px 0" src="./client/public/images/fire1.PNG" ></a>
 
-<img style="margin: 0 0 15px 0" src="./client/public/images/mouth2.PNG" ></a>
+<img style="margin: 0 0 15px 0" src="./client/public/images/fire2.PNG" ></a>
 
-<img style="margin: 0 0 15px 0" src="./client/public/images/mouth3.PNG" ></a>
+<img style="margin: 0 0 15px 0" src="./client/public/images/fire3.PNG" ></a>
 
-<img style="margin: 0 0 15px 0" src="./client/public/images/mouth4.PNG" ></a>
+<img style="margin: 0 0 15px 0" src="./client/public/images/fire4.PNG" ></a>

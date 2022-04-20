@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// lauch app and connect to database
+// launch app and connect to database
 db.once('open', () => {
   app.listen(PORT, () => {
     console.log(`API server running on port ${PORT}!`);
